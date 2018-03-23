@@ -1,16 +1,17 @@
 <%-- 
-    Document   : 7c.jsp
+    Document   : 7cUpdate.jsp
     Created on : 23 Mar, 2018, 3:08:52 PM
     Author     : Baseem
 --%>
-
+<%@page import="Beans.sevenCUpdateBean"%>
+<%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>BLC 7C</title>
+        <title>BLC 7C Update</title>
         <script src="../js/jquery-3.3.1.js"></script>
         <script src="../js/materialize.js"></script>
         <!-- <script src="../js/bootstrap.min.js"></script> -->
@@ -95,6 +96,20 @@
 
     </head>
     <body>
+        <%
+                            //Creating the reference of type ResultSet
+                            ResultSet RS;
+                            //Creating the object of AdminVewRequestBean
+                           sevenCUpdateBean obj = new sevenCUpdateBean();                           
+                         //Using the static show_Customer_NV() function of Customer
+                            RS = obj.selectRecord7cUpdate(2);
+                            int i = 1;
+                            while (RS.next()) {
+
+                        %>
+                        <%
+                            }
+                        %>
         <div>
             <img src="../images/ministry.png" style="height:120px; width: 30%;" alt="">
             <img src="../images/pmay.png" style="height:120px; width: 70%; margin-left: -5px;" alt="">

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : CLAIM Verification
-    Created on : 02-Aug-2017, 04:08:40 PM
+    Document   : BEN Verification
+    Created on : 23-03-2018, 04:08:40 PM
     Author     : PLANET
 --%>
 
@@ -8,7 +8,7 @@
 <%@page import="Beans.AdminRequestBean"%>
 
 <%-- This page is used to display the details of the 
-       non-verified customers, and then later verify them --%>
+       retrieve benificiary details , and then later verify them --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"
         import = "java.sql.*"%>
 <!DOCTYPE html>
@@ -18,10 +18,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
         <title>  | BEN Verification</title>
-        <!-- Loading third party fonts -->
-
-        <!-- Loading main css file ->
-        <link rel="stylesheet" href="../css/header.css">-->
+        <!-- Loading main css file -->
         <script src="../js/jquery-3.3.1.js"></script>
         <script src="../js/materialize.js"></script>
         <script src="../js/material.js"></script>
@@ -30,22 +27,17 @@
         <link rel="stylesheet" href="../css/material.css">
         <link rel="stylesheet" href="../css/table.css">
     </head>
-
     <body>
         <div>
             <img src="../images/ministry.png" style="height:120px; width: 30%;" alt="">
             <img src="../images/pmay.png" style="height:120px; width: 70%; margin-left: -5px;" alt="">
-        </div> 
-
-        <jsp:include page="../newjsp.jsp"/>
-
+            <jsp:include page="../newjsp.jsp"/>
+        </div>
     <center><h1><strong>BEN RECORD</strong></h1></center>
     <center>
         <form  action=""  >
             <div class="">
                 <div style="overflow-x:auto;">
-
-
                     <table border="1" WIDTH="100%" >
                         <tr><th>S_NO</th>
                             <th>SURVEY_NO</th>
@@ -122,8 +114,8 @@
                             %>
                             <td>OTHER</td>
                             <%
-                                    }//printing gender for selection end************
-%>
+                                }//printing gender for selection end************
+                            %>
 
                             <td><%= RS.getString(11)%></td>
                             <td><%= RS.getString(12)%></td>
@@ -182,8 +174,8 @@
                             %>
                             <td>OBC</td>
                             <%
-                                    }//printing caste for selection  END***********
-%>
+                                }//printing caste for selection  END***********
+                            %>
                             <td><%= RS.getString(22)%></td>
                             <td><%= RS.getString(23)%></td>
                             <td><%= RS.getString(24)%></td>
@@ -227,7 +219,5 @@
         <br><br><br>
         <jsp:include page="../Footer.jspf"/>
     </div>
-
 </body>
-
 </html>
