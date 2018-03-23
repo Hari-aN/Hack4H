@@ -22,6 +22,12 @@
 
         <!-- Loading main css file ->
         <link rel="stylesheet" href="../css/header.css">-->
+        <script src="../js/jquery-3.3.1.js"></script>
+        <script src="../js/materialize.js"></script>
+        <script src="../js/material.js"></script>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/materialize.css">
+        <link rel="stylesheet" href="../css/material.css">
         <link rel="stylesheet" href="../css/table.css">
     </head>
 
@@ -29,15 +35,16 @@
         <div>
             <img src="../images/ministry.png" style="height:120px; width: 30%;" alt="">
             <img src="../images/pmay.png" style="height:120px; width: 70%; margin-left: -5px;" alt="">
+            <jsp:include page="../Header.jspf"/>
         </div> 
 
-        <jsp:include page="../Header.jspf"/>
+
         <br><br><br><br>
         <div>
             <form  action=""  >
                 <div class="">
-                    <div style="overflow-x:auto;" >
-                        <table border ="1" >
+                    <div style="overflow-x:auto;"  >
+                        <table border ="1" WIDTH="100%">
                             <tr><th>S_NO</th>
                                 <th>SURVEY_NO</th>
                                 <th>NAME</th>
@@ -129,7 +136,7 @@
                                 <td>OTHER</td>
                                 <%
                                     }//printing religion for selection  END***********
-                                %>                          <td><%= RS.getString(7)%></td>
+%>                          <td><%= RS.getString(7)%></td>
 
 
                                 <td><a href="">add</a></td>
@@ -147,8 +154,9 @@
                 </div>
             </form>
         </div>
-                               
+
         <div>
+            <br><br><br>
             <jsp:include page="../Footer.jspf"/>
         </div>
     </body>
