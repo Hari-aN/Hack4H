@@ -1,0 +1,22 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23 Mar, 2018, 2:12:44 PM
+    Author     : Baseem
+*/
+
+.dropdown-content {
+    overflow-y: visible;
+ }
+ 
+ .dropdown-content .dropdown-content {
+    margin-left: 100%;
+ }
+
+ .page-footer {
+background-color: #f4511e ; 
+min-height: 50px;
+ }
