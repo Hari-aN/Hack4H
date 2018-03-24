@@ -66,7 +66,7 @@ public class sevenCInsertUpdate {
     * @param 
     */
     
-    public void blc_DPR_Insert(String STATE, String DISTRICT, String CITY, String PORJECT_NM, String SLNA_NM, String IA_NAME, double PROJECT_COST, int GEN_OLD, 
+  /*  public void blc_DPR_Insert(String STATE, String DISTRICT, String CITY, String PORJECT_NM, String SLNA_NM, String IA_NAME, double PROJECT_COST, int GEN_OLD, 
             int SC_OLD, int ST_OLD, int OBC_OLD, int MINORITY_OLD, int GEN_NEW, int SC_NEW, int ST_NEW, int OBC_NEW, int MINORITY_NEW, 
             byte PMAY_GUIDELINES, byte OWNERSHIP, byte BUILDING_PLAN, double CENTRAL_GRANT, float STATE_GRANT, float ULB_GRANT, float BEN_SHARE, 
             byte TECH_SPECIFICATION, byte ENSURED_BALANCE_COST, byte WATER, byte SEWERAGE, byte ROAD, byte WATER_DRAIN, byte ELECTRIFICATION,
@@ -129,8 +129,16 @@ public class sevenCInsertUpdate {
             counter = pstmt.executeUpdate();
 
             System.out.println(counter);
-            
-        } catch (SQLException e) {
+    */        
+    public void blc_DPR_Insert(String STATE,String DISTRICT){
+sql = "INSERT INTO TEST(STATE,DISTRICT) VALUES(?,?)";
+       try{
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, STATE);
+            pstmt.setString(2, DISTRICT);
+            counter = pstmt.executeUpdate();
+} catch(SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }

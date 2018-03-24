@@ -34,7 +34,7 @@ public class BLC_ULB_DPR_Update extends HttpServlet {
 		// TODO Auto-generated method stub
 	    String STATE = request.getParameter ("stateName");
 	    String DISTRICT = request.getParameter ("districtName");
-	    String CITY = request.getParameter ("cityName");
+	    /*String CITY = request.getParameter ("cityName");
 	    String PORJECT_NM = request.getParameter ("projectName");
 	    String SLNA_NM = request.getParameter ("SLNA_name");
 	    String IA_NAME = request.getParameter ("IA_name");
@@ -76,17 +76,18 @@ public class BLC_ULB_DPR_Update extends HttpServlet {
 	    double CENTRAL_GRANT = (GEN_OLD + SC_OLD + ST_OLD + OBC_OLD + MINORITY_OLD +
 	                         GEN_NEW + SC_NEW + ST_NEW + OBC_NEW + MINORITY_NEW) * 1.5;
 	    double PROJECT_COST = CENTRAL_GRANT + STATE_GRANT + ULB_GRANT + BEN_SHARE;
-	    
+	    */
 	    sevenCInsertUpdate obj = new sevenCInsertUpdate();
 	    
-	    obj.blc_DPR_Insert(STATE, DISTRICT, CITY, PORJECT_NM, SLNA_NM, IA_NAME, PROJECT_COST, GEN_OLD, 
+	    /*obj.blc_DPR_Insert(STATE, DISTRICT, CITY, PORJECT_NM, SLNA_NM, IA_NAME, PROJECT_COST, GEN_OLD, 
 	                        SC_OLD, ST_OLD, OBC_OLD, MINORITY_OLD, GEN_NEW, SC_NEW, ST_NEW, OBC_NEW, MINORITY_NEW,
 	                        PMAY_GUIDELINES, OWNERSHIP, BUILDING_PLAN, CENTRAL_GRANT, STATE_GRANT, ULB_GRANT, BEN_SHARE, 
 	                        TECH_SPECIFICATION, ENSURED_BALANCE_COST, WATER, SEWERAGE, ROAD, WATER_DRAIN, ELECTRIFICATION, 
 	                        WASTE_MANAGEMENT, OTHER_INFRA, DESASTER_RESISTANT, DEMAND_SURVEY, CITY_WIDE_INTEGRATED, SECC_VALIDATION, 
 	                        ENSURE_DBT, GEO_TAGGING_DPR, GREEN_TECH, OTHER_INFO, ULB_DIGITAL_SIGN);
-	    
-	}
+*/	    
+	obj.blc_DPR_Insert(STATE, DISTRICT);
+        }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
