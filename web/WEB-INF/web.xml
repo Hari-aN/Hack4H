@@ -4,9 +4,17 @@
         <servlet-name>AHPRegistration</servlet-name>
         <servlet-class>controllers.AHPRegistration</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BLC_ULB_DPR_Update</servlet-name>
+        <servlet-class>controllers.BLC_ULB_DPR_Update</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AHPRegistration</servlet-name>
         <url-pattern>/AHPRegistration</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BLC_ULB_DPR_Update</servlet-name>
+        <url-pattern>/BLC_ULB_DPR_Update</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

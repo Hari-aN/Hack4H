@@ -12,14 +12,14 @@ public class sevenCUpdateBean extends model.DBModel {
      * This fuction is used to retrieve the data
      * from the ben_survey_gnrl table
      */
-    public ResultSet selectRecord7cUpdate(int survey) throws ClassNotFoundException {
+    public ResultSet selectRecord7cUpdate(int BLC_PROJECT_NO) throws ClassNotFoundException {
         try {
            // DBModel db =new DBModel();
 
             QUERY = "	SELECT * "
-                    + "from ben_survey_gnrl"
-                    + " WHERE SURVEY_NO="
-                    + survey
+                    + "from blc_dpr"
+                    + " WHERE BLC_PROJECT_NO="
+                    + BLC_PROJECT_NO
                     + ";";
 
             RS1 = queryReturner(QUERY);
