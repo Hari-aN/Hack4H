@@ -1,536 +1,545 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Format for Projects under Affordable Housing in Partnership</title>
-    <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/materialize.js"></script>
-    <!-- <script src="js/bootstrap.min.js"></script> -->
-    <script src="js/material.js"></script>
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="css/materialize.css">
-    <link rel="stylesheet" href="css/material.css">
-    <link rel="stylesheet" href="css/style1.css">
-    <script>1
-        $(document).ready(function() {
-           $('select').material_select();
-        });
-     </script>
-    <script>
-        var selectstate = {
-            a1: ["Anantapur","Chittoor","East Godavari","Guntur","Krishna","Kurnool","Prakasam","Srikakulam","SriPotti Sri Ramulu Nellore","Vishakhapatnam","Vizianagaram","West Godavari","Cudappah"],
-            a2:  ["Anjaw","Changlang","Dibang Valley","East Siang","East Kameng","Kurung Kumey","Lohit","Longding","Lower Dibang Valley","Lower Subansiri","Papum Pare", "Tawang","Tirap","Upper Siang","Upper Subansiri","West Kameng","West Siang"],
-            a3: ["Baksa","Barpeta","Bongaigaon","Cachar","Chirang","Darrang","Dhemaji","Dima Hasao","Dhubri","Dibrugarh","Goalpara","Golaghat","Hailakandi","Jorhat","Kamrup","Kamrup Metropolitan","Karbi Anglong","Karimganj","Kokrajhar","Lakhimpur","Morigaon","Nagaon","Nalbari","Sivasagar","Sonitpur","Tinsukia","Udalguri"],
-            a4: ["Araria","Arwal","Aurangabad","Banka","Begusarai","Bhagalpur","Bhojpur","Buxar","Darbhanga","East Champaran","Gaya","Gopalganj","Jamui","Jehanabad","Kaimur",
-                                        "Katihar","Khagaria","Kishanganj","Lakhisarai","Madhepura","Madhubani","Munger","Muzaffarpur","Nalanda","Nawada","Patna","Purnia","Rohtas","Saharsa",
-                                        "Samastipur","Saran","Sheikhpura","Sheohar","Sitamarhi","Siwan","Supaul","Vaishali","West Champaran"],
-            a6: ["Bastar","Bijapur","Bilaspur","Dantewada","Dhamtari","Durg","Jashpur","Janjgir-Champa","Korba","Koriya","Kanker","Kabirdham (formerly Kawardha)","Mahasamund",
-                                            "Narayanpur","Raigarh","Rajnandgaon","Raipur","Surajpur","Surguja"],
-            a7: ["Amal","Silvassa"],
-            a8: ["Daman","Diu"],
-            a12: ["Delhi","New Delhi","North Delhi","Noida","Patparganj","Sonabarsa","Tughlakabad"],
-            a9: ["Chapora","Dabolim","Madgaon","Marmugao (Marmagao)","Panaji Port","Panjim","Pellet Plant Jetty/Shiroda","Talpona","Vasco da Gama"],
-            a10: ["Ahmedabad","Amreli district","Anand","Aravalli","Banaskantha","Bharuch","Bhavnagar","Dahod","Dang","Gandhinagar","Jamnagar","Junagadh",
-                                        "Kutch","Kheda","Mehsana","Narmada","Navsari","Patan","Panchmahal","Porbandar","Rajkot","Sabarkantha","Surendranagar","Surat","Tapi","Vadodara","Valsad"],
-            a11: ["Ambala","Bhiwani","Faridabad","Fatehabad","Gurgaon","Hissar","Jhajjar","Jind","Karnal","Kaithal", "Kurukshetra","Mahendragarh","Mewat","Palwal","Panchkula","Panipat","Rewari","Rohtak","Sirsa","Sonipat","Yamuna Nagar"],                             
-            a13:  ["Baddi","Baitalpur","Chamba","Dharamsala","Hamirpur","Kangra","Kinnaur","Kullu","Lahaul & Spiti","Mandi","Simla","Sirmaur","Solan","Una"],
-            a14: ["Jammu","Leh","Rajouri","Srinagar"],
-            a34: ["Bokaro","Chatra","Deoghar","Dhanbad","Dumka","East Singhbhum","Garhwa","Giridih","Godda","Gumla","Hazaribag","Jamtara","Khunti","Koderma","Latehar","Lohardaga","Pakur","Palamu",
-                                            "Ramgarh","Ranchi","Sahibganj","Seraikela Kharsawan","Simdega","West Singhbhum"],
-            a15: ["Bagalkot","Bangalore","Bangalore Urban","Belgaum","Bellary","Bidar","Bijapur","Chamarajnagar", "Chikkamagaluru","Chikkaballapur",
-                                          "Chitradurga","Davanagere","Dharwad","Dakshina Kannada","Gadag","Gulbarga","Hassan","Haveri district","Kodagu",
-                                          "Kolar","Koppal","Mandya","Mysore","Raichur","Shimoga","Tumkur","Udupi","Uttara Kannada","Ramanagara","Yadgir"],
-            a16: ["Alappuzha","Ernakulam","Idukki","Kannur","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thrissur","Thiruvananthapuram","Wayanad"],
-            a17:  ["Alirajpur","Anuppur","Ashoknagar","Balaghat","Barwani","Betul","Bhilai","Bhind","Bhopal","Burhanpur","Chhatarpur","Chhindwara","Damoh","Dewas","Dhar","Guna","Gwalior","Hoshangabad",
-                                    "Indore","Itarsi","Jabalpur","Khajuraho","Khandwa","Khargone","Malanpur","Malanpuri (Gwalior)","Mandla","Mandsaur","Morena","Narsinghpur","Neemuch","Panna","Pithampur","Raipur","Raisen","Ratlam",
-                                    "Rewa","Sagar","Satna","Sehore","Seoni","Shahdol","Singrauli","Ujjain"],
-            a18:  ["Ahmednagar","Akola","Alibag","Amaravati","Arnala","Aurangabad","Aurangabad","Bandra","Bassain","Belapur","Bhiwandi","Bhusaval","Borliai-Mandla","Chandrapur","Dahanu","Daulatabad","Dighi (Pune)","Dombivali","Goa","Jaitapur","Jalgaon",
-                                            "Jawaharlal Nehru (Nhava Sheva)","Kalyan","Karanja","Kelwa","Khopoli","Kolhapur","Lonavale","Malegaon","Malwan","Manori",
-                                            "Mira Bhayandar","Miraj","Mumbai (ex Bombay)","Murad","Nagapur","Nagpur","Nalasopara","Nanded","Nandgaon","Nasik","Navi Mumbai","Nhave","Osmanabad","Palghar",
-                                            "Panvel","Pimpri","Pune","Ratnagiri","Sholapur","Shrirampur","Shriwardhan","Tarapur","Thana","Thane","Trombay","Varsova","Vengurla","Virar","Wada"],
-            a20: ["Bishnupur","Churachandpur","Chandel","Imphal East","Senapati","Tamenglong","Thoubal","Ukhrul","Imphal West"],
-            a21: ["Baghamara","Balet","Barsora","Bolanganj","Dalu","Dawki","Ghasuapara","Mahendraganj","Moreh","Ryngku","Shella Bazar","Shillong"],
-            a22: ["Aizawl","Champhai","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip"],
-            a23: ["Dimapur","Kiphire","Kohima","Longleng","Mokokchung","Mon","Peren","Phek","Tuensang","Wokha","Zunheboto"],                                 
-            a24: ["Bahabal Pur","Bhubaneswar","Chandbali","Gopalpur","Jeypore","Paradip Garh","Puri","Rourkela"],
-            a25: ["Karaikal","Mahe","Pondicherry","Yanam"],
-            a26: ["Amritsar","Barnala","Bathinda","Firozpur","Faridkot","Fatehgarh Sahib","Fazilka","Gurdaspur","Hoshiarpur","Jalandhar","Kapurthala","Ludhiana","Mansa","Moga","Sri Muktsar Sahib","Pathankot",
-                                        "Patiala","Rupnagar","Ajitgarh (Mohali)","Sangrur","Shahid Bhagat Singh Nagar","Tarn Taran"],
-            a27: ["Ajmer","Banswara","Barmer","Barmer Rail Station","Basni","Beawar","Bharatpur","Bhilwara","Bhiwadi","Bikaner","Bongaigaon","Boranada, Jodhpur","Chittaurgarh","Fazilka","Ganganagar","Jaipur","Jaipur-Kanakpura",
-                                      "Jaipur-Sitapura","Jaisalmer","Jodhpur","Jodhpur-Bhagat Ki Kothi","Jodhpur-Thar","Kardhan","Kota","Munabao Rail Station","Nagaur","Rajsamand","Sawaimadhopur","Shahdol","Shimoga","Tonk","Udaipur"],
-            a28: ["Chamurci","Gangtok"],
-            a29:  ["Ariyalur","Chennai","Coimbatore","Cuddalore","Dharmapuri","Dindigul","Erode","Kanchipuram","Kanyakumari","Karur","Krishnagiri","Madurai","Mandapam","Nagapattinam","Nilgiris","Namakkal","Perambalur","Pudukkottai","Ramanathapuram","Salem","Sivaganga","Thanjavur","Thiruvallur","Tirupur",
-                                  "Tiruchirapalli","Theni","Tirunelveli","Thanjavur","Thoothukudi","Tiruvallur","Tiruvannamalai","Vellore","Villupuram","Viruthunagar"],
-            a36: ["Adilabad","Hyderabad","Karimnagar","Mahbubnagar","Medak","Nalgonda","Nizamabad","Ranga Reddy","Warangal"],
-            a30: ["Agartala","Dhalaighat","Kailashahar","Kamalpur","Kanchanpur","Kel Sahar Subdivision","Khowai","Khowaighat","Mahurighat","Old Raghna Bazar","Sabroom","Srimantapur"],
-            a31:  ["Agra","Allahabad","Auraiya","Banbasa","Bareilly","Berhni","Bhadohi","Dadri","Dharchula","Gandhar","Gauriphanta","Ghaziabad","Gorakhpur","Gunji",
-                                    "Jarwa","Jhulaghat (Pithoragarh)","Kanpur","Katarniyaghat","Khunwa","Loni","Lucknow","Meerut","Moradabad","Muzaffarnagar","Nepalgunj Road","Pakwara (Moradabad)",
-                                    "Pantnagar","Saharanpur","Sonauli","Surajpur","Tikonia","Varanasi"],
-            a35: ["Almora","Badrinath","Bangla","Barkot","Bazpur","Chamoli","Chopra","Dehra Dun","Dwarahat","Garhwal","Haldwani","Hardwar","Haridwar","Jamal","Jwalapur","Kalsi","Kashipur","Mall",
-                                          "Mussoorie","Nahar","Naini","Pantnagar","Pauri","Pithoragarh","Rameshwar","Rishikesh","Rohni","Roorkee","Sama","Saur"],
-            a32: ["Alipurduar","Bankura","Bardhaman","Birbhum","Cooch Behar","Dakshin Dinajpur","Darjeeling","Hooghly","Howrah",
-                                    "Jalpaiguri","Kolkata","Maldah","Murshidabad","Nadia","North 24 Parganas","Paschim Medinipur","Purba Medinipur","Purulia","South 24 Parganas","Uttar Dinajpur"]
-        }
-
-        function changecat(value) {
-            if (value.length == 0) document.getElementById("city").innerHTML = "<option></option>";
-            else {
-                var catOptions = "";
-                for (categoryId in selectstate[value]) {
-                catOptions += "<option>" + selectstate[value][categoryId] + "</option>";
+    <head>
+        <meta charset="utf-8">
+        <title>Format for Projects under Affordable Housing in Partnership</title>
+        <script src="js/jquery-3.3.1.js"></script>
+        <script src="js/materialize.js"></script>
+        <!-- <script src="js/bootstrap.min.js"></script> -->
+        <script src="js/material.js"></script>
+        <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="css/materialize.css">
+        <link rel="stylesheet" href="css/material.css">
+        <link rel="stylesheet" href="css/style1.css">
+        <script>1
+            $(document).ready(function () {
+                $('select').material_select();
+            });
+        </script>
+        <script>
+            var selectstate = {
+                a1: ["Anantapur", "Chittoor", "East Godavari", "Guntur", "Krishna", "Kurnool", "Prakasam", "Srikakulam", "SriPotti Sri Ramulu Nellore", "Vishakhapatnam", "Vizianagaram", "West Godavari", "Cudappah"],
+                a2: ["Anjaw", "Changlang", "Dibang Valley", "East Siang", "East Kameng", "Kurung Kumey", "Lohit", "Longding", "Lower Dibang Valley", "Lower Subansiri", "Papum Pare", "Tawang", "Tirap", "Upper Siang", "Upper Subansiri", "West Kameng", "West Siang"],
+                a3: ["Baksa", "Barpeta", "Bongaigaon", "Cachar", "Chirang", "Darrang", "Dhemaji", "Dima Hasao", "Dhubri", "Dibrugarh", "Goalpara", "Golaghat", "Hailakandi", "Jorhat", "Kamrup", "Kamrup Metropolitan", "Karbi Anglong", "Karimganj", "Kokrajhar", "Lakhimpur", "Morigaon", "Nagaon", "Nalbari", "Sivasagar", "Sonitpur", "Tinsukia", "Udalguri"],
+                a4: ["Araria", "Arwal", "Aurangabad", "Banka", "Begusarai", "Bhagalpur", "Bhojpur", "Buxar", "Darbhanga", "East Champaran", "Gaya", "Gopalganj", "Jamui", "Jehanabad", "Kaimur",
+                    "Katihar", "Khagaria", "Kishanganj", "Lakhisarai", "Madhepura", "Madhubani", "Munger", "Muzaffarpur", "Nalanda", "Nawada", "Patna", "Purnia", "Rohtas", "Saharsa",
+                    "Samastipur", "Saran", "Sheikhpura", "Sheohar", "Sitamarhi", "Siwan", "Supaul", "Vaishali", "West Champaran"],
+                a6: ["Bastar", "Bijapur", "Bilaspur", "Dantewada", "Dhamtari", "Durg", "Jashpur", "Janjgir-Champa", "Korba", "Koriya", "Kanker", "Kabirdham (formerly Kawardha)", "Mahasamund",
+                    "Narayanpur", "Raigarh", "Rajnandgaon", "Raipur", "Surajpur", "Surguja"],
+                a7: ["Amal", "Silvassa"],
+                a8: ["Daman", "Diu"],
+                a12: ["Delhi", "New Delhi", "North Delhi", "Noida", "Patparganj", "Sonabarsa", "Tughlakabad"],
+                a9: ["Chapora", "Dabolim", "Madgaon", "Marmugao (Marmagao)", "Panaji Port", "Panjim", "Pellet Plant Jetty/Shiroda", "Talpona", "Vasco da Gama"],
+                a10: ["Ahmedabad", "Amreli district", "Anand", "Aravalli", "Banaskantha", "Bharuch", "Bhavnagar", "Dahod", "Dang", "Gandhinagar", "Jamnagar", "Junagadh",
+                    "Kutch", "Kheda", "Mehsana", "Narmada", "Navsari", "Patan", "Panchmahal", "Porbandar", "Rajkot", "Sabarkantha", "Surendranagar", "Surat", "Tapi", "Vadodara", "Valsad"],
+                a11: ["Ambala", "Bhiwani", "Faridabad", "Fatehabad", "Gurgaon", "Hissar", "Jhajjar", "Jind", "Karnal", "Kaithal", "Kurukshetra", "Mahendragarh", "Mewat", "Palwal", "Panchkula", "Panipat", "Rewari", "Rohtak", "Sirsa", "Sonipat", "Yamuna Nagar"],
+                a13: ["Baddi", "Baitalpur", "Chamba", "Dharamsala", "Hamirpur", "Kangra", "Kinnaur", "Kullu", "Lahaul & Spiti", "Mandi", "Simla", "Sirmaur", "Solan", "Una"],
+                a14: ["Jammu", "Leh", "Rajouri", "Srinagar"],
+                a34: ["Bokaro", "Chatra", "Deoghar", "Dhanbad", "Dumka", "East Singhbhum", "Garhwa", "Giridih", "Godda", "Gumla", "Hazaribag", "Jamtara", "Khunti", "Koderma", "Latehar", "Lohardaga", "Pakur", "Palamu",
+                    "Ramgarh", "Ranchi", "Sahibganj", "Seraikela Kharsawan", "Simdega", "West Singhbhum"],
+                a15: ["Bagalkot", "Bangalore", "Bangalore Urban", "Belgaum", "Bellary", "Bidar", "Bijapur", "Chamarajnagar", "Chikkamagaluru", "Chikkaballapur",
+                    "Chitradurga", "Davanagere", "Dharwad", "Dakshina Kannada", "Gadag", "Gulbarga", "Hassan", "Haveri district", "Kodagu",
+                    "Kolar", "Koppal", "Mandya", "Mysore", "Raichur", "Shimoga", "Tumkur", "Udupi", "Uttara Kannada", "Ramanagara", "Yadgir"],
+                a16: ["Alappuzha", "Ernakulam", "Idukki", "Kannur", "Kasaragod", "Kollam", "Kottayam", "Kozhikode", "Malappuram", "Palakkad", "Pathanamthitta", "Thrissur", "Thiruvananthapuram", "Wayanad"],
+                a17: ["Alirajpur", "Anuppur", "Ashoknagar", "Balaghat", "Barwani", "Betul", "Bhilai", "Bhind", "Bhopal", "Burhanpur", "Chhatarpur", "Chhindwara", "Damoh", "Dewas", "Dhar", "Guna", "Gwalior", "Hoshangabad",
+                    "Indore", "Itarsi", "Jabalpur", "Khajuraho", "Khandwa", "Khargone", "Malanpur", "Malanpuri (Gwalior)", "Mandla", "Mandsaur", "Morena", "Narsinghpur", "Neemuch", "Panna", "Pithampur", "Raipur", "Raisen", "Ratlam",
+                    "Rewa", "Sagar", "Satna", "Sehore", "Seoni", "Shahdol", "Singrauli", "Ujjain"],
+                a18: ["Ahmednagar", "Akola", "Alibag", "Amaravati", "Arnala", "Aurangabad", "Aurangabad", "Bandra", "Bassain", "Belapur", "Bhiwandi", "Bhusaval", "Borliai-Mandla", "Chandrapur", "Dahanu", "Daulatabad", "Dighi (Pune)", "Dombivali", "Goa", "Jaitapur", "Jalgaon",
+                    "Jawaharlal Nehru (Nhava Sheva)", "Kalyan", "Karanja", "Kelwa", "Khopoli", "Kolhapur", "Lonavale", "Malegaon", "Malwan", "Manori",
+                    "Mira Bhayandar", "Miraj", "Mumbai (ex Bombay)", "Murad", "Nagapur", "Nagpur", "Nalasopara", "Nanded", "Nandgaon", "Nasik", "Navi Mumbai", "Nhave", "Osmanabad", "Palghar",
+                    "Panvel", "Pimpri", "Pune", "Ratnagiri", "Sholapur", "Shrirampur", "Shriwardhan", "Tarapur", "Thana", "Thane", "Trombay", "Varsova", "Vengurla", "Virar", "Wada"],
+                a20: ["Bishnupur", "Churachandpur", "Chandel", "Imphal East", "Senapati", "Tamenglong", "Thoubal", "Ukhrul", "Imphal West"],
+                a21: ["Baghamara", "Balet", "Barsora", "Bolanganj", "Dalu", "Dawki", "Ghasuapara", "Mahendraganj", "Moreh", "Ryngku", "Shella Bazar", "Shillong"],
+                a22: ["Aizawl", "Champhai", "Kolasib", "Lawngtlai", "Lunglei", "Mamit", "Saiha", "Serchhip"],
+                a23: ["Dimapur", "Kiphire", "Kohima", "Longleng", "Mokokchung", "Mon", "Peren", "Phek", "Tuensang", "Wokha", "Zunheboto"],
+                a24: ["Bahabal Pur", "Bhubaneswar", "Chandbali", "Gopalpur", "Jeypore", "Paradip Garh", "Puri", "Rourkela"],
+                a25: ["Karaikal", "Mahe", "Pondicherry", "Yanam"],
+                a26: ["Amritsar", "Barnala", "Bathinda", "Firozpur", "Faridkot", "Fatehgarh Sahib", "Fazilka", "Gurdaspur", "Hoshiarpur", "Jalandhar", "Kapurthala", "Ludhiana", "Mansa", "Moga", "Sri Muktsar Sahib", "Pathankot",
+                    "Patiala", "Rupnagar", "Ajitgarh (Mohali)", "Sangrur", "Shahid Bhagat Singh Nagar", "Tarn Taran"],
+                a27: ["Ajmer", "Banswara", "Barmer", "Barmer Rail Station", "Basni", "Beawar", "Bharatpur", "Bhilwara", "Bhiwadi", "Bikaner", "Bongaigaon", "Boranada, Jodhpur", "Chittaurgarh", "Fazilka", "Ganganagar", "Jaipur", "Jaipur-Kanakpura",
+                    "Jaipur-Sitapura", "Jaisalmer", "Jodhpur", "Jodhpur-Bhagat Ki Kothi", "Jodhpur-Thar", "Kardhan", "Kota", "Munabao Rail Station", "Nagaur", "Rajsamand", "Sawaimadhopur", "Shahdol", "Shimoga", "Tonk", "Udaipur"],
+                a28: ["Chamurci", "Gangtok"],
+                a29: ["Ariyalur", "Chennai", "Coimbatore", "Cuddalore", "Dharmapuri", "Dindigul", "Erode", "Kanchipuram", "Kanyakumari", "Karur", "Krishnagiri", "Madurai", "Mandapam", "Nagapattinam", "Nilgiris", "Namakkal", "Perambalur", "Pudukkottai", "Ramanathapuram", "Salem", "Sivaganga", "Thanjavur", "Thiruvallur", "Tirupur",
+                    "Tiruchirapalli", "Theni", "Tirunelveli", "Thanjavur", "Thoothukudi", "Tiruvallur", "Tiruvannamalai", "Vellore", "Villupuram", "Viruthunagar"],
+                a36: ["Adilabad", "Hyderabad", "Karimnagar", "Mahbubnagar", "Medak", "Nalgonda", "Nizamabad", "Ranga Reddy", "Warangal"],
+                a30: ["Agartala", "Dhalaighat", "Kailashahar", "Kamalpur", "Kanchanpur", "Kel Sahar Subdivision", "Khowai", "Khowaighat", "Mahurighat", "Old Raghna Bazar", "Sabroom", "Srimantapur"],
+                a31: ["Agra", "Allahabad", "Auraiya", "Banbasa", "Bareilly", "Berhni", "Bhadohi", "Dadri", "Dharchula", "Gandhar", "Gauriphanta", "Ghaziabad", "Gorakhpur", "Gunji",
+                    "Jarwa", "Jhulaghat (Pithoragarh)", "Kanpur", "Katarniyaghat", "Khunwa", "Loni", "Lucknow", "Meerut", "Moradabad", "Muzaffarnagar", "Nepalgunj Road", "Pakwara (Moradabad)",
+                    "Pantnagar", "Saharanpur", "Sonauli", "Surajpur", "Tikonia", "Varanasi"],
+                a35: ["Almora", "Badrinath", "Bangla", "Barkot", "Bazpur", "Chamoli", "Chopra", "Dehra Dun", "Dwarahat", "Garhwal", "Haldwani", "Hardwar", "Haridwar", "Jamal", "Jwalapur", "Kalsi", "Kashipur", "Mall",
+                    "Mussoorie", "Nahar", "Naini", "Pantnagar", "Pauri", "Pithoragarh", "Rameshwar", "Rishikesh", "Rohni", "Roorkee", "Sama", "Saur"],
+                a32: ["Alipurduar", "Bankura", "Bardhaman", "Birbhum", "Cooch Behar", "Dakshin Dinajpur", "Darjeeling", "Hooghly", "Howrah",
+                    "Jalpaiguri", "Kolkata", "Maldah", "Murshidabad", "Nadia", "North 24 Parganas", "Paschim Medinipur", "Purba Medinipur", "Purulia", "South 24 Parganas", "Uttar Dinajpur"]
             }
-            document.getElementById("city").innerHTML = catOptions;
+
+            function changecat(value) {
+                if (value.length == 0)
+                    document.getElementById("city").innerHTML = "<option></option>";
+                else {
+                    var catOptions = "";
+                    for (categoryId in selectstate[value]) {
+                        catOptions += "<option>" + selectstate[value][categoryId] + "</option>";
+                    }
+                    document.getElementById("city").innerHTML = catOptions;
+                }
+                $('select').material_select();
             }
-            $('select').material_select();
-        }
-            
-      </script>
 
-     </head>
-     <body>
-        <nav class="header">
-             <div class="nav-wrapper">
-              <p style ="padding-left: 60px; font-size: 20px; padding-top:20px;">Format for Projects under Affordable Housing in Partnership</p >
-             </div>    
-        </nav>  
-        <form action="">
-            <div class="row">
-                 <div class="col input-field s3">
-                    <select name="stateName" onChange="changecat(this.value);">
-                        <option value="">Select State</option>
-                        <option value="a1">ANDHRA PRADESH</option>
-                        <option value="a2">ARUNACHAL PRADESH</option>
-                        <option value="a3">ASSAM</option>
-                        <option value="a4">BIHAR</option>
-                        <option value="a5">CHANDIGARH</option>
-                        <option value="a6">CHHATTISGARH</option>
-                        <option value="a7">DADRA AND NAGAR HAVELI</option>
-                        <option value="a8">DAMAN AND DIU</option>
-                        <option value="a12">Delhi</option>
-                        <option value="a9">GOA</option>
-                        <option value="a10">GUJARAT</option>
-                        <option value="a11">HARYANA</option>
-                        <option value="a13">HIMACHAL PRADESH</option>
-                        <option value="a14">JAMMU AND KASHMIR</option>
-                        <option value="a34">JHARKHAND</option>
-                        <option value="a15">KARNATAKA</option>
-                        <option value="a16">KERALA</option>
-                        <option value="a17">MADHYA PRADESH</option>
-                        <option value="a18">MAHARASHTRA</option>
-                        <option value="a20">MANIPUR</option>
-                        <option value="a21">MEGHALAYA</option>
-                        <option value="a22">MIZORAM</option>
-                        <option value="a23">NAGALAND</option>
-                        <option value="a24">ODISHA</option>
-                        <option value="a25">PUDUCHERRY</option>
-                        <option value="a26">PUNJAB</option>
-                        <option value="a27">RAJASTHAN</option>
-                        <option value="a28">SIKKIM</option>
-                        <option value="a29">TAMIL NADU</option>
-                        <option value="a36">TELANGANA</option>
-                        <option value="a30">TRIPURA</option>
-                        <option value="a31">UTTAR PRADESH</option>
-                        <option value="a35">UTTARAKHAND</option>
-                        <option value="a32">WEST BENGAL</option>
-                </select>
-                </div>
-            
-                <div class="col input-field s3">
-                  <select name="districtName" id="city">
-                    <option value="">Select District </option>
-                   </select>
-                
-            </div>
+        </script>
 
+    </head>
+    <body>
+         <div>
+            <img src="../images/ministry.png" style="height:120px; width: 30%;" alt="">
+            <img src="../images/pmay.png" style="height:120px; width: 70%; margin-left: -5px;" alt="">
+            <jsp:include page="../Header.jspf"/>
+        </div> 
+        <nav class="header" style="margin-left: 10%;width:80%;">
+            <div class="nav-wrapper"style="margin-left: 20%;width:80%; background-color: green;">
+                <p style ="padding-left: 60px; font-size: 20px; padding-top:20px;">Format for Projects under Affordable Housing in Partnership</p >
+            </div>    
+        </nav> 
+        
+            <form action="" style="background-color: #FFEBEE;border-width: 2px;border-radius: 20px;margin-left: 10%;width:80%;">
                 <div class="row">
+                    <div class="col input-field s3">
+                        <select name="stateName" onChange="changecat(this.value);">
+                            <option value="">Select State</option>
+                            <option value="a1">ANDHRA PRADESH</option>
+                            <option value="a2">ARUNACHAL PRADESH</option>
+                            <option value="a3">ASSAM</option>
+                            <option value="a4">BIHAR</option>
+                            <option value="a5">CHANDIGARH</option>
+                            <option value="a6">CHHATTISGARH</option>
+                            <option value="a7">DADRA AND NAGAR HAVELI</option>
+                            <option value="a8">DAMAN AND DIU</option>
+                            <option value="a12">Delhi</option>
+                            <option value="a9">GOA</option>
+                            <option value="a10">GUJARAT</option>
+                            <option value="a11">HARYANA</option>
+                            <option value="a13">HIMACHAL PRADESH</option>
+                            <option value="a14">JAMMU AND KASHMIR</option>
+                            <option value="a34">JHARKHAND</option>
+                            <option value="a15">KARNATAKA</option>
+                            <option value="a16">KERALA</option>
+                            <option value="a17">MADHYA PRADESH</option>
+                            <option value="a18">MAHARASHTRA</option>
+                            <option value="a20">MANIPUR</option>
+                            <option value="a21">MEGHALAYA</option>
+                            <option value="a22">MIZORAM</option>
+                            <option value="a23">NAGALAND</option>
+                            <option value="a24">ODISHA</option>
+                            <option value="a25">PUDUCHERRY</option>
+                            <option value="a26">PUNJAB</option>
+                            <option value="a27">RAJASTHAN</option>
+                            <option value="a28">SIKKIM</option>
+                            <option value="a29">TAMIL NADU</option>
+                            <option value="a36">TELANGANA</option>
+                            <option value="a30">TRIPURA</option>
+                            <option value="a31">UTTAR PRADESH</option>
+                            <option value="a35">UTTARAKHAND</option>
+                            <option value="a32">WEST BENGAL</option>
+                        </select>
+                    </div>
+
+                    <div class="col input-field s3">
+                        <select name="districtName" id="city">
+                            <option value="">Select District </option>
+                        </select>
+
+                    </div>
+
+                    <div class="row">
                         <div class="col input-field s3">
                             <input name="cityName" id="icon_prefix" type="text" class="validate">
                             <label for="icon_prefix">City Name</label>
                         </div>  
-                </div>
-                <div class="row">
-                <div class="col input-field s3">
-                        <input name="projectName" id="project_name" type="text" class="validate">
-                        <label for="project_name">Project Name</label>
-                </div>
-                <div class="col input-field s3">
-                        <input name="projectCode" id="project_code" type="text" class="validate">
-                        <label for="project_code">Project Code</label>
-                </div>
-            </div>
-                               
-            <div class="row">
-                    <div class="col input-field s3">
-                      <select name="nodalAgency">
-                          <option value="">State Level Nodal Agency</option>
-                          <option value="01">SLAC</option>
-                          <option value="02">SLSMC</option>
-                      </select>
-                   </div>
-               
-                   <div class="col input-field s3">
-                      <select name="implementingAgency">
-                          <option value="">Implementing Agency </option>
-                          <option value="01">Urban Local Bodies</option>
-                          <option value="02">Development Authority</option>
-                          <option value="03">Housing Board</option>
-                          <option value="04">Urban Improvement Trust</option>
-                          <option value="05">Slum Rehabilitation Agency</option>
-                          <option value="06">Private Agency</option>
-                          <option value="07">Developer</option>
-                      </select>
-               </div>
-                   </div>
-                   <p class="row">Project Cost(In Lakhs):</p>
-                   <div class="row projectCost">
-                     <div style="width:150px" class="col housing">
-                       <div class="input-field col proCost">
-                         <input name="projectCostHousing" id="icon_prefix" type="text" class="validate">
-                         <label for="icon_prefix">Housing</label>
-                       </div>
-                     </div>
-                     <div style="width:150px" class="col infrastructure">
-                        <div class="input-field col proCost">
-                          <input name="projectInfrastructure" id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Infrastructure</label>
+                    </div>
+                    <div class="row">
+                        <div class="col input-field s3">
+                            <input name="projectName" id="project_name" type="text" class="validate">
+                            <label for="project_name">Project Name</label>
                         </div>
-                     </div> 
-                     <div style="width:150px" class="col other">
+                        <div class="col input-field s3">
+                            <input name="projectCode" id="project_code" type="text" class="validate">
+                            <label for="project_code">Project Code</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col input-field s3">
+                            <select name="nodalAgency">
+                                <option value="">State Level Nodal Agency</option>
+                                <option value="01">SLAC</option>
+                                <option value="02">SLSMC</option>
+                            </select>
+                        </div>
+
+                        <div class="col input-field s3">
+                            <select name="implementingAgency">
+                                <option value="">Implementing Agency </option>
+                                <option value="01">Urban Local Bodies</option>
+                                <option value="02">Development Authority</option>
+                                <option value="03">Housing Board</option>
+                                <option value="04">Urban Improvement Trust</option>
+                                <option value="05">Slum Rehabilitation Agency</option>
+                                <option value="06">Private Agency</option>
+                                <option value="07">Developer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p class="row">Project Cost(In Lakhs):</p>
+                    <div class="row projectCost">
+                        <div style="width:150px" class="col housing">
                             <div class="input-field col proCost">
-                              <input name="othersCost" id="icon_prefix" type="text" class="validate">
-                              <label for="icon_prefix">Others</label>
+                                <input name="projectCostHousing" id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Housing</label>
                             </div>
-                     </div>
-                   </div>
-                     <p class="row">No. of EWS Beneficiaries covered in the Project:</p>
-                     <div class="row ewsBeneficiaries">
-                       <div style="width:150px" class="col general">
-                         <div class="input-field col ewsBeneficiaries">
-                           <input name="ewsBeneficiariesGeneral" id="icon_prefix" type="text" class="validate">
-                           <label for="icon_prefix">General</label>
-                         </div>
-                       </div>
-                       <div style="width:150px" class="col sc">
-                          <div class="input-field col ewsBeneficiaries">
-                            <input name=ewsBeneficiariesSC"" id="icon_prefix" type="text" class="validate">
-                            <label for="icon_prefix">SC</label>
-                          </div>
-                       </div> 
-                       <div style="width:150px" class="col st">
-                              <div class="input-field col ewsBeneficiaries">
+                        </div>
+                        <div style="width:150px" class="col infrastructure">
+                            <div class="input-field col proCost">
+                                <input name="projectInfrastructure" id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Infrastructure</label>
+                            </div>
+                        </div> 
+                        <div style="width:150px" class="col other">
+                            <div class="input-field col proCost">
+                                <input name="othersCost" id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Others</label>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="row">No. of EWS Beneficiaries covered in the Project:</p>
+                    <div class="row ewsBeneficiaries">
+                        <div style="width:150px" class="col general">
+                            <div class="input-field col ewsBeneficiaries">
+                                <input name="ewsBeneficiariesGeneral" id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">General</label>
+                            </div>
+                        </div>
+                        <div style="width:150px" class="col sc">
+                            <div class="input-field col ewsBeneficiaries">
+                                <input name=ewsBeneficiariesSC"" id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">SC</label>
+                            </div>
+                        </div> 
+                        <div style="width:150px" class="col st">
+                            <div class="input-field col ewsBeneficiaries">
                                 <input name="ewsBeneficiariesST" id="icon_prefix" type="text" class="validate">
                                 <label for="icon_prefix">ST</label>
-                              </div>
-                       </div>
-                       <div style="width:150px" class="col obc">
-                              <div class="input-field col ewsBeneficiaries">
+                            </div>
+                        </div>
+                        <div style="width:150px" class="col obc">
+                            <div class="input-field col ewsBeneficiaries">
                                 <input name="ewsBeneficiariesOBC" id="icon_prefix" type="text" class="validate">
                                 <label for="icon_prefix">OBC</label>
-                              </div>
-                       </div>
-                      <div style="width:150px" class="col minority">
-                              <div class="input-field col ewsBeneficiaries ">
+                            </div>
+                        </div>
+                        <div style="width:150px" class="col minority">
+                            <div class="input-field col ewsBeneficiaries ">
                                 <input name="ewsBeneficiariesMinority" id="icon_prefix" type="text" class="validate">
                                 <label for="icon_prefix">Minority</label>
-                              </div>
-                      </div>
+                            </div>
+                        </div>
                     </div>
-                     <!--@-->
+                    <!--@-->
                     <p class="row"> Whether Beneficiary have been selected as per PMAY Guidelines:</p>
                     <div class="row">
-                            <div class="col input-field s3">
-                              <select name="pmayGuidelines">
-                                  <option value="">Select</option>
-                                  <option value="01">Yes</option>
-                                  <option value="02">No</option>
-                              </select>
-                           </div>
+                        <div class="col input-field s3">
+                            <select name="pmayGuidelines">
+                                <option value="">Select</option>
+                                <option value="01">Yes</option>
+                                <option value="02">No</option>
+                            </select>
+                        </div>
                     </div>
-                      <!--@-->
-                      <div class="row">
-                            <div class="col input-field s3">
-                                    <input name="constructionCost" id="const_cost" type="text" class="validate">
-                                    <label for="const_cost">Construction Cost of EWS Unit( In Lakhs.)</label>
-                            </div>
-                            <div class="col input-field s3">
-                                    <input name="projectDuration" id="project_duration" type="text" class="validate">
-                                    <label for="project_duration">Project Duration(In Months)</label>
-                            </div>
-                      </div>
-                      <!--@-->
-                      <p class="row"> Whether Sale Price is provided by State/UT:</p>
-                      <div class="row">
-                              <div class="col input-field s3">
-                                <select name="salePriceProvided">
-                                    <option value="">Select</option>
-                                    <option value="01">Yes</option>
-                                    <option value="02">No</option>
-                                </select>
-                             </div>
-                      </div>
-                      <!--#--> 
-                      <div class="row">
-                            <div class="col input-field s3">
-                                    <input name="carpetArea" id="carpet_area" type="text" class="validate">
-                                    <label for="carpet_area">Carpet Area of EWS Unit(in sqm)</label>
-                            </div>
-                      </div>
-                      <!--@-->
-                      <p class="row">Total No. of Houses Proposed in the Project:</p>
-                      <div class="row houseProposed">
+                    <!--@-->
+                    <div class="row">
+                        <div class="col input-field s3">
+                            <input name="constructionCost" id="const_cost" type="text" class="validate">
+                            <label for="const_cost">Construction Cost of EWS Unit( In Lakhs.)</label>
+                        </div>
+                        <div class="col input-field s3">
+                            <input name="projectDuration" id="project_duration" type="text" class="validate">
+                            <label for="project_duration">Project Duration(In Months)</label>
+                        </div>
+                    </div>
+                    <!--@-->
+                    <p class="row"> Whether Sale Price is provided by State/UT:</p>
+                    <div class="row">
+                        <div class="col input-field s3">
+                            <select name="salePriceProvided">
+                                <option value="">Select</option>
+                                <option value="01">Yes</option>
+                                <option value="02">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--#--> 
+                    <div class="row">
+                        <div class="col input-field s3">
+                            <input name="carpetArea" id="carpet_area" type="text" class="validate">
+                            <label for="carpet_area">Carpet Area of EWS Unit(in sqm)</label>
+                        </div>
+                    </div>
+                    <!--@-->
+                    <p class="row">Total No. of Houses Proposed in the Project:</p>
+                    <div class="row houseProposed">
                         <div style="width:150px" class="col ewsUnit">
-                          <div class="input-field col houseProposed ">
-                            <input name="houseProposedEWS" id="icon_prefix" type="text" class="validate">
-                            <label for="icon_prefix">No. of EWS Unit</label>
-                          </div>
+                            <div class="input-field col houseProposed ">
+                                <input name="houseProposedEWS" id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">No. of EWS Unit</label>
+                            </div>
                         </div>
                         <div style="width:150px" class="col ligUnit">
-                           <div class="input-field col houseProposed ">
-                             <input name=" houseProposedLIG" id="icon_prefix" type="text" class="validate">
-                             <label for="icon_prefix">No. of LIG Units</label>
-                           </div>
+                            <div class="input-field col houseProposed ">
+                                <input name=" houseProposedLIG" id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">No. of LIG Units</label>
+                            </div>
                         </div> 
                         <div style="width:150px" class="col migUnit">
-                               <div class="input-field col  houseProposed">
-                                 <input name="houseProposedMIG" id="icon_prefix" type="text" class="validate">
-                                 <label for="icon_prefix">No. of MIG Units</label>
-                               </div>
+                            <div class="input-field col  houseProposed">
+                                <input name="houseProposedMIG" id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">No. of MIG Units</label>
+                            </div>
                         </div>
                         <div style="width:150px" class="col higUnit">
-                               <div class="input-field col  houseProposed">
-                                 <input name="houseProposedHIG" id="icon_prefix" type="text" class="validate">
-                                 <label for="icon_prefix">No .of HIG Units</label>
-                               </div>
+                            <div class="input-field col  houseProposed">
+                                <input name="houseProposedHIG" id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">No .of HIG Units</label>
+                            </div>
                         </div>
                         <div style="width:200px" class="col commUnit">
-                                <div class="input-field col  houseProposed">
-                                  <input name="houseProposedCommercial" id="icon_prefix" type="text" class="validate">
-                                  <label for="icon_prefix">No .of Commercial Units</label>
-                                </div> 
-                         </div>
-                      </div>
-                      <!--@-->
-                      <p class="row"> Whether open and transparent procedure has been envisaged to selct private partner, 
-                                      If private partner has been considered:</p>
-                      <div class="row">
-                              <div class="col input-field s3">
-                                <select name="privatePartner">
-                                    <option value="">Select</option>
-                                    <option value="01">Yes</option>
-                                    <option value="02">No</option>
-                                </select>
-                             </div>
-                      </div>
-                      <div class="row">
-                        
-                          <div class="col input-field s6">
-                                  <input name="eligibleHousesEWS" id="centralAssist" type="text" class="validate">
-                                  <label for="centralAssist">No. of EWS houses eligible for Central Assistance</label>
-                          </div>
-                        
-                      </div> 
-                        <!--#-->
-                        <p class="row">Got Grant required(Rs. 1.50 Lakh per eligible EWS house)(Rs. In Lakhs):</p>
-                        <div class="row houseGrant">
-                            <div class="input-field col s4 houseGrant  ">
-                              <input name="stateGrant" id="icon_prefix" type="text" class="validate">
-                              <label for="icon_prefix">State Grant(Rs. In Lakhs)</label>
-                            </div>
-                             <div class="input-field col s4 houseGrant ">
-                               <input name="landCost" id="icon_prefix" type="text" class="validate">
-                               <label for="icon_prefix">Land Cost(Rs. In Lakhs)</label>
-                          </div> 
-                                 <div class="input-field col s4  houseGrant">
-                                   <input name="cashGrant" id="icon_prefix" type="text" class="validate">
-                                   <label for="icon_prefix">Cash Grant(Rs. In Lakhs)</label>
-                          </div>
-                        </div>
-                        <div class="row">
-                                 <div class="input-field col s4 houseGrant">
-                                   <input name="implementingAgencyShare" id="icon_prefix" type="text" class="validate">
-                                   <label for="icon_prefix">Implementing Agency Share(Rs In Lakhs)</label>
-                                 </div>
-                                  <div class="input-field col s4 houseGrant">
-                                    <input name="beneficiaryShare" id="icon_prefix" type="text" class="validate">
-                                    <label for="icon_prefix">Beneficiary Share(Rs. In Lakhs)</label>
-                           </div>
-                       </div>
-                       <!--@-->
-                       <p class="row"> Whether technical Specification/design for housin have been ensured as per Indian Standards/NBC/State Norms:</p>
-                              <div class="row">
-                               <div class="col input-field s3">
-                                     <select name="technicalSpecificationStandard">
-                                      <option value="">Select</option>
-                                      <option value="01">Yes</option>
-                                      <option value="02">No</option>
-                                     </select>
-                               </div>
-                              </div>
-                            </div>
-                            <p class="row"> Whether trunk Infrastructure is existing or is being provided through AMRUT or any other Scheme: </p>
-                            <div class="row">
-                             <div class="col input-field s3">
-                                   <select name="infrastructureProvided">
-                                    <option value="">Select</option>
-                                    <option value="01">Yes</option>
-                                    <option value="02">No</option>
-                                   </select>
-                             </div>
+                            <div class="input-field col  houseProposed">
+                                <input name="houseProposedCommercial" id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">No .of Commercial Units</label>
                             </div> 
-                            
-                           </div>
-                           <p class="row"> Whether the provision of Civic Infrastructure has been made as per applicable State norms/CPHEEO Norms/IS Code/NBC: </p>
-                           <div class="row">
-                              <div class="col input-field s3">
-                                <select name="civicInfrastructureNorms">
-                                    <option value="">Water Supply</option>
-                                    <option value="01">Yes</option>
-                                    <option value="02">No</option>
-                                </select>
-                             </div>
-                         
-                             <div class="col input-field s3">
-                                <select name="sewrageExistance">
-                                    <option value="">Sewerage </option>
-                                    <option value="01">Yes</option>
-                                    <option value="02">No</option>
-                                </select>
-                             </div>
-             
-                             <div class="row">
-                                     <div class="col input-field s3">
-                                             <select name="roadExistance">
-                                                <option value="">Road</option>
-                                                <option value="01">Yes</option>
-                                                <option value="02">No</option>
-                                             </select>
-                                     </div>  
-                             </div>
-                             <div class="col input-field s3">
-                                <select name="externalElectrification">
-                                    <option value="">External Electrification</option>
-                                    <option value="01">Yes</option>
-                                    <option value="02">No</option>
-                                </select>
-                             </div>
-                             <div class="col input-field s3">
-                                <select name="wasteManagement">
-                                    <option value="">Solid Waste Management </option>
-                                    <option value="01">Yes</option>
-                                    <option value="02">No</option>
-                                </select>
-                             </div>
-                             <div class="row other">
-                                  <div class="input-field col s3">
-                                    <input name="anyOtherRequirement" id="icon_prefix" type="text" class="validate">
-                                    <label for="icon_prefix">Any Other</label>
-                                  </div>
-                                   <div class="input-field col s9">
-                                     <input name="infrastructureProposed" id="icon_prefix" type="text" class="validate">
-                                     <label for="icon_prefix">In case, any infrastructure has not been proposed,reason thereof</label>
-                                   </div>
-                             </div>
-                            <!--@-->
-                            <p class="row"> Whether Adequate social infrastructure facilities covered in the project: </p>
-                            <div class="row">
-                             <div class="col input-field s3">
-                                   <select name="infrastructureFacilities">
-                                    <option value="">Select</option>
-                                    <option value="01">Yes</option>
-                                    <option value="02">No</option>
-                                   </select>
-                             </div>
-                            </div>
-                            <p class="row"> Whether disaster(earthquake,flood,cyclone,landslide,etc)resistentfeatures have been adopted 
-                                             in concept,design and implementation of the project: </p>
-                             <div class="col input-field s3">
-                                   <select name="disasterResistent">
-                                    <option value="">Select</option>
-                                    <option value="01">Yes</option>
-                                    <option value="02">No</option>
-                                   </select>
-                             </div>
-                            </div>
-                            <p class="row"> Whether Quality Assurance is part of the Project: </p>
-                               <div class="row">
-                                  <div class="col input-field s3">
-                                   <select name="qualityAssurance">
-                                     <option value="">Select</option>
-                                     <option value="01">Yes</option>
-                                     <option value="02">No</option>
-                                   </select>
-                                  </div>
-                               </div>
-                               <p class="row"> Whether O&M is part of the Project: </p>
-                               <div class="row">
-                                  <div class="col input-field s3">
-                                   <select name="omPart">
-                                     <option value="">Select</option>
-                                     <option value="01">Yes</option>
-                                     <option value="02">No</option>
-                                   </select>
-                                  </div>
-                               </div>
-                               <p class="row"> Whether encumbrance free land is available for the Project: </p>
-                               <div class="row">
-                                  <div class="col input-field s3">
-                                   <select name="encumbranceLand">
-                                     <option value="">Select</option>
-                                     <option value="01">Yes</option>
-                                     <option value="02">No</option>
-                                   </select>
-                                  </div>
-                               </div>
-                               <p class="row"> Whether any innovative/cost effective/Green Technology adopted in the Project: </p>
-                               <div class="row">
-                                  <div class="col input-field s3">
-                                   <select name="greenTechnology">
-                                     <option value="">Select</option>
-                                     <option value="01">Yes</option> 
-                                     <option value="02">No</option>
-                                   </select>
-                                  </div>
-                               </div>
-                               <!--@-->
-                               <div class="row">
-                                  <div class="col input-field s6">
-                                          <input name="commentSLAC" id="commentsOfslac" type="text" class="validate">
-                                          <label for="commentsOfslac">Comments Of SLAC after Techno Economic Appraisal of DPR</label>
-                                  </div>
-                                  <div class="col input-field s6">
-                                          <input name="projectBrief" id="projectBrief" type="text" class="validate">
-                                          <label for="projectBrief">Project Brief including any other information ULB/State would like to furnish</label>
-                                  </div>
-                              </div>
+                        </div>
+                    </div>
+                    <!--@-->
+                    <p class="row"> Whether open and transparent procedure has been envisaged to selct private partner, 
+                        If private partner has been considered:</p>
+                    <div class="row">
+                        <div class="col input-field s3">
+                            <select name="privatePartner">
+                                <option value="">Select</option>
+                                <option value="01">Yes</option>
+                                <option value="02">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
 
-                              <div>
-                                  <div class="row">
-                                    <div class="input-field col s6 ">
-                                      <p style="margin-top:-20px;">Project Submission Date to SLSMC:</p>
-                                        <input name="projectSubmissionDate" type="text" class="datepicker">
-                                        <script>
-                                          $('.datepicker').pickadate({
-                                            selectMonths: true, // Creates a dropdown to control month
-                                           selectYears: 15, // Creates a dropdown of 15 years to control year,
-                                            today: 'Today',
-                                            clear: 'Clear',
-                                            close: 'Ok',
-                                            closeOnSelect: false // Close upon selecting a date,
-                                          });
-                                        </script>
-                                    </div>
-                                  </div>
-                                </div>
+                        <div class="col input-field s6">
+                            <input name="eligibleHousesEWS" id="centralAssist" type="text" class="validate">
+                            <label for="centralAssist">No. of EWS houses eligible for Central Assistance</label>
+                        </div>
 
-                                <div style="margin-left: 50px" class="row">
-                                  <div class="col">
-                                      <a class="waves-effect waves-light btn">Save</a>
-                                  </div>
-                                  <div class="col">
-                                      <a class="waves-effect waves-light btn">Cancel</a>
-                                  </div>
-                                </div>
-                      </div>
-        </form>
+                    </div> 
+                    <!--#-->
+                    <p class="row">Got Grant required(Rs. 1.50 Lakh per eligible EWS house)(Rs. In Lakhs):</p>
+                    <div class="row houseGrant">
+                        <div class="input-field col s4 houseGrant  ">
+                            <input name="stateGrant" id="icon_prefix" type="text" class="validate">
+                            <label for="icon_prefix">State Grant(Rs. In Lakhs)</label>
+                        </div>
+                        <div class="input-field col s4 houseGrant ">
+                            <input name="landCost" id="icon_prefix" type="text" class="validate">
+                            <label for="icon_prefix">Land Cost(Rs. In Lakhs)</label>
+                        </div> 
+                        <div class="input-field col s4  houseGrant">
+                            <input name="cashGrant" id="icon_prefix" type="text" class="validate">
+                            <label for="icon_prefix">Cash Grant(Rs. In Lakhs)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4 houseGrant">
+                            <input name="implementingAgencyShare" id="icon_prefix" type="text" class="validate">
+                            <label for="icon_prefix">Implementing Agency Share(Rs In Lakhs)</label>
+                        </div>
+                        <div class="input-field col s4 houseGrant">
+                            <input name="beneficiaryShare" id="icon_prefix" type="text" class="validate">
+                            <label for="icon_prefix">Beneficiary Share(Rs. In Lakhs)</label>
+                        </div>
+                    </div>
+                    <!--@-->
+                    <p class="row"> Whether technical Specification/design for housin have been ensured as per Indian Standards/NBC/State Norms:</p>
+                    <div class="row">
+                        <div class="col input-field s3">
+                            <select name="technicalSpecificationStandard">
+                                <option value="">Select</option>
+                                <option value="01">Yes</option>
+                                <option value="02">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <p class="row"> Whether trunk Infrastructure is existing or is being provided through AMRUT or any other Scheme: </p>
+                <div class="row">
+                    <div class="col input-field s3">
+                        <select name="infrastructureProvided">
+                            <option value="">Select</option>
+                            <option value="01">Yes</option>
+                            <option value="02">No</option>
+                        </select>
+                    </div>
+                </div> 
+
+
+                <p class="row"> Whether the provision of Civic Infrastructure has been made as per applicable State norms/CPHEEO Norms/IS Code/NBC: </p>
+                <div class="row">
+                    <div class="col input-field s3">
+                        <select name="civicInfrastructureNorms">
+                            <option value="">Water Supply</option>
+                            <option value="01">Yes</option>
+                            <option value="02">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col input-field s3">
+                        <select name="sewrageExistance">
+                            <option value="">Sewerage </option>
+                            <option value="01">Yes</option>
+                            <option value="02">No</option>
+                        </select>
+                    </div>
+
+                    <div class="row">
+                        <div class="col input-field s3">
+                            <select name="roadExistance">
+                                <option value="">Road</option>
+                                <option value="01">Yes</option>
+                                <option value="02">No</option>
+                            </select>
+                        </div>  
+                    </div>
+                    <div class="col input-field s3">
+                        <select name="externalElectrification">
+                            <option value="">External Electrification</option>
+                            <option value="01">Yes</option>
+                            <option value="02">No</option>
+                        </select>
+                    </div>
+                    <div class="col input-field s3">
+                        <select name="wasteManagement">
+                            <option value="">Solid Waste Management </option>
+                            <option value="01">Yes</option>
+                            <option value="02">No</option>
+                        </select>
+                    </div>
+                    <div class="row other">
+                        <div class="input-field col s3">
+                            <input name="anyOtherRequirement" id="icon_prefix" type="text" class="validate">
+                            <label for="icon_prefix">Any Other</label>
+                        </div>
+                        <div class="input-field col s9">
+                            <input name="infrastructureProposed" id="icon_prefix" type="text" class="validate">
+                            <label for="icon_prefix">In case, any infrastructure has not been proposed,reason thereof</label>
+                        </div>
+                    </div>
+                    <!--@-->
+                    <p class="row"> Whether Adequate social infrastructure facilities covered in the project: </p>
+                    <div class="row">
+                        <div class="col input-field s3">
+                            <select name="infrastructureFacilities">
+                                <option value="">Select</option>
+                                <option value="01">Yes</option>
+                                <option value="02">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p class="row"> Whether disaster(earthquake,flood,cyclone,landslide,etc)resistentfeatures have been adopted 
+                        in concept,design and implementation of the project: </p>
+                    <div class="col input-field s3">
+                        <select name="disasterResistent">
+                            <option value="">Select</option>
+                            <option value="01">Yes</option>
+                            <option value="02">No</option>
+                        </select>
+                    </div>
+                </div>
+                <p class="row"> Whether Quality Assurance is part of the Project: </p>
+                <div class="row">
+                    <div class="col input-field s3">
+                        <select name="qualityAssurance">
+                            <option value="">Select</option>
+                            <option value="01">Yes</option>
+                            <option value="02">No</option>
+                        </select>
+                    </div>
+                </div>
+                <p class="row"> Whether O&M is part of the Project: </p>
+                <div class="row">
+                    <div class="col input-field s3">
+                        <select name="omPart">
+                            <option value="">Select</option>
+                            <option value="01">Yes</option>
+                            <option value="02">No</option>
+                        </select>
+                    </div>
+                </div>
+                <p class="row"> Whether encumbrance free land is available for the Project: </p>
+                <div class="row">
+                    <div class="col input-field s3">
+                        <select name="encumbranceLand">
+                            <option value="">Select</option>
+                            <option value="01">Yes</option>
+                            <option value="02">No</option>
+                        </select>
+                    </div>
+                </div>
+                <p class="row"> Whether any innovative/cost effective/Green Technology adopted in the Project: </p>
+                <div class="row">
+                    <div class="col input-field s3">
+                        <select name="greenTechnology">
+                            <option value="">Select</option>
+                            <option value="01">Yes</option> 
+                            <option value="02">No</option>
+                        </select>
+                    </div>
+                </div>
+                <!--@-->
+                <div class="row">
+                    <div class="col input-field s6">
+                        <input name="commentSLAC" id="commentsOfslac" type="text" class="validate">
+                        <label for="commentsOfslac">Comments Of SLAC after Techno Economic Appraisal of DPR</label>
+                    </div>
+                    <div class="col input-field s6">
+                        <input name="projectBrief" id="projectBrief" type="text" class="validate">
+                        <label for="projectBrief">Project Brief including any other information ULB/State would like to furnish</label>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="row">
+                        <div class="input-field col s6 ">
+                            <p style="margin-top:-20px;">Project Submission Date to SLSMC:</p>
+                            <input name="projectSubmissionDate" type="text" class="datepicker">
+                            <script>
+                                $('.datepicker').pickadate({
+                                    selectMonths: true, // Creates a dropdown to control month
+                                    selectYears: 15, // Creates a dropdown of 15 years to control year,
+                                    today: 'Today',
+                                    clear: 'Clear',
+                                    close: 'Ok',
+                                    closeOnSelect: false // Close upon selecting a date,
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-left: 50px" class="row">
+                    <div class="col">
+                        <a class="waves-effect waves-light btn">Save</a>
+                    </div>
+                    <div class="col">
+                        <a class="waves-effect waves-light btn">Cancel</a>
+                    </div>
+                </div>
+
+            </form>
+
+        
     </body>
 </html> 

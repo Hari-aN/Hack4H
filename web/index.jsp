@@ -15,8 +15,7 @@ offered by the development team.
         <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
         <title> Pradhan Mantri Aawas Yojna(Urbon&Rural) </title>
         <link rel="icon" type="image/png" href="http://localhost:8080/Hack2k18_PMAY/images/logo.jpg" />
-        <!-- Loading main css file -->
-        <script src="js/jquery-3.3.1.js"></script>
+         <script src="js/jquery-3.3.1.js"></script>
         <script src="js/materialize.js"></script>
         <script src="js/material.js"></script>
         <link rel="stylesheet" href="css/style.css">
@@ -34,6 +33,7 @@ offered by the development team.
             <br> <br>
             <br> <br>
             <br> <br>
+            <a href="http://localhost:8080/Hack2k18_PMAY/JSP/template.jsp"> jump to next Template page..</a>
             <br> <br>
             <br> <br>
             <br> <br>

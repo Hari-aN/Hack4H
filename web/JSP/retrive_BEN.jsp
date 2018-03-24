@@ -31,7 +31,7 @@
         <div>
             <img src="../images/ministry.png" style="height:120px; width: 30%;" alt="">
             <img src="../images/pmay.png" style="height:120px; width: 70%; margin-left: -5px;" alt="">
-            <jsp:include page="../newjsp.jsp"/>
+            <jsp:include page="../Header.jspf"/>
         </div>
     <center><h1><strong>BEN RECORD</strong></h1></center>
     <center>

@@ -97,34 +97,32 @@
     </head>
     <body>
         <%
-                            //Creating the reference of type ResultSet
-                            ResultSet RS;
-                            //Creating the object of AdminVewRequestBean
-                           sevenCUpdateBean obj = new sevenCUpdateBean();                           
-                         //Using the static show_Customer_NV() function of Customer
-                            RS = obj.selectRecord7cUpdate(2);
-                            int i = 1;
-                            while (RS.next()) {
+            //Creating the reference of type ResultSet
+            ResultSet RS;
+            //Creating the object of AdminVewRequestBean
+            sevenCUpdateBean obj = new sevenCUpdateBean();
+            //Using the static show_Customer_NV() function of Customer
+            RS = obj.selectRecord7cUpdate(2);
+            int i = 1;
+            while (RS.next()) {
 
-                        %>
-                        <%
-                            }
-                        %>
+        %>
+
         <div>
             <img src="../images/ministry.png" style="height:120px; width: 30%;" alt="">
             <img src="../images/pmay.png" style="height:120px; width: 70%; margin-left: -5px;" alt="">
             <jsp:include page="../Header.jspf"/>
         </div> 
-        <nav class="header">
-            <div class="nav-wrapper">
+        <nav class="header" style="margin-left: 10%;width:80%;">
+            <div class="nav-wrapper" style="margin-left: 20%;width:80%; background-color: green;">
                 <p style ="padding-left: 60px; font-size: 20px; padding-top:20px;">Beneficiary led Construction or Enhancement</p >
             </div>    
         </nav>  
-        <form action="http://localhost:8080/PMAY/BLC_ULB_DPR_Insert" method = "POST">
+        <form action="http://localhost:8080/PMAY/BLC_ULB_DPR_Insert" method = "POST" style="background-color: #FFEBEE;border-width: 2px;border-radius: 20px;margin-left: 10%;width:80%;">
             <div class="row">
                 <div class="col input-field s3">
                     <select required name="stateName" onChange="changecat(this.value);">
-                        <option value="">Select State</option>
+                        <option value="<%= RS.getString(2)%>"><%= RS.getString(2)%></option>
                         <option value="Andhra Pradesh">ANDHRA PRADESH</option>
                         <option value="Arunachal Pradesh">ARUNACHAL PRADESH</option>
                         <option value="Assam">ASSAM</option>
@@ -171,13 +169,13 @@
 
                 <div class="row">
                     <div class="col input-field s3">
-                        <input name="cityName" id="icon_prefix" type="text" class="validate">
+                        <input name="cityNa" id="icon_prefix" type="text" value="<%= RS.getString(3)%>" class="validate">
                         <label for="icon_prefix">Name of the City </label>
                     </div>  
                 </div>
                 <div class="row">
                     <div class="col input-field s3">
-                        <input name="projectName" id="project_name" type="text" class="validate">
+                        <input name="projectName" id="project_name" type="text" value="<%= RS.getString(3)%>" class="validate">
                         <label for="project_name">Project Name</label>
                     </div>
                 </div>
@@ -185,7 +183,7 @@
                 <div class="row">
                     <div class="col input-field s3">
                         <select name="SLNA_name">
-                            <option value="">State Level Nodal Agency</option>
+                            <option value="<%= RS.getString(3)%>"><%= RS.getString(3)%>"(SLNA)</option>
                             <option value="SLAC">SLAC</option>
                             <option value="SLSMC">SLSMC</option>
                         </select>
@@ -193,7 +191,7 @@
 
                     <div class="col input-field s3">
                         <select name="IA_name">
-                            <option value="">Implementing Agency </option>
+                            <option value="<%= RS.getString(3)%>"><%= RS.getString(3)%>(IA)</option>
                             <option value="ULB">Urban Local Bodies</option>
                             <option value="DA">Development Authority</option>
                             <option value="HB">Housing Board</option>
@@ -212,7 +210,23 @@
                     <p class="row">No. of New Construction Beneficiaries covered in the Project:</p>
                     <div style="width:150px" class="col general">
                         <div class="input-field col ewsBeneficiaries">
-                            <input name="newBenGnrl" id="icon_prefix" type="number" class="validate">
+                            <input name="newBenGnrl" id="icon_prefix" type="number" value="0" class="validate" onclick="myFunction()">
+                            <button onclick="myFunction()">Try it</button>
+                            
+                            <!--<p>Click the button to change the number of the number field.</p>
+
+                            <button onclick="myFunction()">Try it</button>
+
+                            <p><strong>Note:</strong> input elements with type="number" are not supported in IE 9 and earlier versions.</p>
+
+                            <p id="demo"></p>-->
+                            
+
+                            <script>
+                                function myFunction() {
+                                    document.getElementById("myNumber").value = "<%= RS.getString(3)%>";
+                                }
+                            </script>
                             <label for="icon_prefix">General</label>
                         </div>
                     </div>
@@ -224,7 +238,7 @@
                     </div> 
                     <div style="width:150px" class="col st">
                         <div class="input-field col ewsBeneficiaries">
-                            <input name="newBenST" id="icon_prefix" type="number" class="validate">
+                            <input name="newBenST" id="icon_prefix" type="number" class="validate" set="<%= RS.getString(3)%>">
                             <label for="icon_prefix">ST</label>
                         </div>
                     </div>
@@ -522,12 +536,14 @@
 
 
 
-            <div style="margin-left: 50px" class="row">
+            <div style="alignment-adjust: central;" class="row">
                 <div class="col">
-                    <input type="submit" value="submit">
+                    <a class="waves-effect waves-light btn"><input name="Save" type="submit"></a>
                 </div>
-            </div>
-
+            </div> 
+            <%
+                }
+            %>
         </form>
         <div>
             <br><br><br>

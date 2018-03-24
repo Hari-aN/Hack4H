@@ -27,7 +27,7 @@ it will help in managing common header footer and will avoid hoch-poch coding.
         <div>
             <img src="../images/ministry.png" style="height:120px; width: 30%;" alt="">
             <img src="../images/pmay.png" style="height:120px; width: 70%; margin-left: -5px;" alt="">
-            <jsp:include page="../newjsp.jsp"/>
+            <jsp:include page="../Header.jspf"/>
         </div>
         <div>
             <h1>this division can be used for your editing  purpose. </h1>
