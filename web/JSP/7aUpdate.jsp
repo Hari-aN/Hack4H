@@ -175,13 +175,13 @@
                 </div>
                 <div class="row">
                     <div class="col input-field s3">
-                        <input name="cityName" id="icon_prefix" type="text" value="<%= RS.getString(4)%>" class="validate">
+                        <input name="cityName" id="icon_prefix" type="text" value="<%= RS.getString(5)%>" class="validate">
                         <label for="icon_prefix">Slum Name</label>
                     </div>  
                 </div>
                 <div class="row">
                     <div class="col input-field s3">
-                        <input name="projectName" id="project_name" type="text" value="<%= RS.getString(5)%>" class="validate">
+                        <input name="projectName" id="project_name" type="text" value="<%= RS.getString(6)%>" class="validate">
                         <label for="project_name">Project Name</label>
                     </div>
                 </div>
@@ -189,7 +189,7 @@
                 <div class="row">
                     <div class="col input-field s3">
                         <select name="SLNA_name">
-                            <option value="<%= RS.getString(7)%>"><%= RS.getString(7)%>"(SLNA)</option>
+                            <option value="<%= RS.getString(8)%>"><%= RS.getString(8)%>"(SLNA)</option>
                             <option value="SLAC">SLAC</option>
                             <option value="SLSMC">SLSMC</option>
                         </select>
@@ -197,7 +197,7 @@
 
                     <div class="col input-field s3">
                         <select name="IA_name">
-                            <option value="<%= RS.getString(8)%>"><%= RS.getString(8)%>(IA)</option>
+                            <option value="<%= RS.getString(9)%>"><%= RS.getString(9)%>(IA)</option>
                             <option value="ULB">Urban Local Bodies</option>
                             <option value="DA">Development Authority</option>
                             <option value="HB">Housing Board</option>
@@ -211,11 +211,11 @@
                 <div class="row">
                     <div class="input-field col s3 ">
                         <input required name="projectCost" id="icon_prefix" type="number" class="validate" step = "0.01">
-                        <label for="icon_prefix"><%= RS.getString(3)%>(Rs.InLakhs)</label>
+                        <label for="icon_prefix"><%= RS.getString(10)%>(Rs.InLakhs)</label>
                     </div>
                     <div class="input-field col s3 ">
                         <input required name="projectDuration" id="icon_prefix" type="number" class="validate" step = "0.01">
-                        <label for="icon_prefix"><%= RS.getString(3)%>(In Months)</label>
+                        <label for="icon_prefix"><%= RS.getString(11)%>(In Months)</label>
                     </div>
                 </div>
                 <!-- STATUS OF THE SLUM -->
@@ -225,17 +225,17 @@
                         <div style="width:180px; margin-right: 20px;"  class="row input-field s6 frm2 proCode">
                             <select required name="slumStatus">
                                 <%
-                                    if (Integer.parseInt(RS.getString(3)) == 1) {
+                                    if (Integer.parseInt(RS.getString(12)) == 1) {
                                 %>
-                                <option value="1"><%= RS.getString(3)%></option>
+                                <option value="1"><%= RS.getString(12)%></option>
                                 <%
-                                } else if (Integer.parseInt(RS.getString(3)) == 2) {
+                                } else if (Integer.parseInt(RS.getString(12)) == 2) {
                                 %>
-                                <option value="2"><%= RS.getString(3)%></option>
+                                <option value="2"><%= RS.getString(12)%></option>
                                 <%
-                                } else if (Integer.parseInt(RS.getString(3)) == 3) {
+                                } else if (Integer.parseInt(RS.getString(12)) == 3) {
                                 %>
-                                <option value="3"><%= RS.getString(3)%></option>
+                                <option value="3"><%= RS.getString(12)%></option>
                                 <option value="1">1(notified)</option>
                                 <option value="2">2(recognized)</option>
                                 <option value="3">3(identified)</option>
@@ -245,19 +245,19 @@
                         <div style="width:150px; margin-right: 40px;" class="row number">
                             <div class="input-field col proName">
                                 <input required style="width:150px" name="slumArea" id="icon_prefix" type="number" class="validate" step = "0.01">
-                                <label for="icon_prefix"><%= RS.getString(3)%>(Area of Slum)</label>
+                                <label for="icon_prefix"><%= RS.getString(13)%>(Area of Slum)</label>
                             </div>
                         </div>
                         <div  style="width:230px; margin-right: 40px;" class="row number">
                             <div class="input-field col proName">
                                 <input required style="width:230px"  name="rehabilitationArea" id="icon_prefix" type="number" class="validate" step = "0.01">
-                                <label style="width:230px"  for="icon_prefix"><%= RS.getString(3)%>(Area under Rehabilitation)</label>
+                                <label style="width:230px"  for="icon_prefix"><%= RS.getString(14)%>(Area under Rehabilitation)</label>
                             </div>
                         </div>
                         <div style="width:130px;" class="row number">
                             <div class="input-field col proName">
                                 <input required style="width: 140px;" name="slumPopulation" id="icon_prefix" type="number" class="validate">
-                                <label for="icon_prefix"><%= RS.getString(3)%>(Slum Population)</label>
+                                <label for="icon_prefix"><%= RS.getString(15)%>(Slum Population)</label>
                             </div>
                         </div>
                     </div>
@@ -269,31 +269,31 @@
                         <div class="input-field col ewsBeneficiaries">
 
                             <input name="GEN" id="icon_prefix" type="number" class="validate">
-                            <label for="icon_prefix"><%= RS.getString(10)%>(GEN)</label>
+                            <label for="icon_prefix"><%= RS.getString(16)%>(GEN)</label>
                         </div>
                     </div>
                     <div style="width:150px" class="col sc">
                         <div class="input-field col ewsBeneficiaries">
                             <input name="SC" id="icon_prefix" type="number" class="validate">
-                            <label for="icon_prefix"><%= RS.getString(11)%>(SC)</label>
+                            <label for="icon_prefix"><%= RS.getString(17)%>(SC)</label>
                         </div>
                     </div> 
                     <div style="width:150px" class="col st">
                         <div class="input-field col ewsBeneficiaries">
                             <input name="ST" id="icon_prefix" type="number" class="validate">
-                            <label for="icon_prefix"><%= RS.getString(12)%>(ST)</label>
+                            <label for="icon_prefix"><%= RS.getString(18)%>(ST)</label>
                         </div>
                     </div>
                     <div style="width:150px" class="col obc">
                         <div class="input-field col ewsBeneficiaries">
                             <input name="OBC" id="icon_prefix" type="number" class="validate">
-                            <label for="icon_prefix"><%= RS.getString(13)%>(OBC)</label>
+                            <label for="icon_prefix"><%= RS.getString(19)%>(OBC)</label>
                         </div>
                     </div>
                     <div style="width:150px" class="col minority">
                         <div class="input-field col ewsBeneficiaries ">
                             <input name="Minority" id="icon_prefix" type="number" class="validate">
-                            <label for="icon_prefix"><%= RS.getString(14)%>(Minority)</label>
+                            <label for="icon_prefix"><%= RS.getString(20)%>(Minority)</label>
                         </div>
                     </div>
                 </div> 
@@ -302,31 +302,31 @@
                     <div style="width:150px" class="col general">
                         <div class="input-field col ewsBeneficiaries">
                             <input name="GEN1" id="icon_prefix" type="number" class="validate">
-                            <label for="icon_prefix"><%= RS.getString(15)%>(GEN)</label>
+                            <label for="icon_prefix"><%= RS.getString(21)%>(GEN)</label>
                         </div>
                     </div>
                     <div style="width:150px" class="col sc">
                         <div class="input-field col ewsBeneficiaries">
                             <input name="SC1" id="icon_prefix" type="number" class="validate">
-                            <label for="icon_prefix"><%= RS.getString(16)%>(SC)</label>
+                            <label for="icon_prefix"><%= RS.getString(22)%>(SC)</label>
                         </div>
                     </div> 
                     <div style="width:150px" class="col st">
                         <div class="input-field col ewsBeneficiaries">
                             <input name="ST1" id="icon_prefix" type="number" class="validate">
-                            <label for="icon_prefix"><%= RS.getString(17)%>(ST)</label>
+                            <label for="icon_prefix"><%= RS.getString(23)%>(ST)</label>
                         </div>
                     </div>
                     <div style="width:150px" class="col obc">
                         <div class="input-field col ewsBeneficiaries">
                             <input name="OBC1" id="icon_prefix" type="number" class="validate">
-                            <label for="icon_prefix"><%= RS.getString(18)%>(OBC)</label>
+                            <label for="icon_prefix"><%= RS.getString(24)%>(OBC)</label>
                         </div>
                     </div>
                     <div style="width:150px" class="col minority">
                         <div class="input-field col ewsBeneficiaries ">
                             <input name="Minority1" id="icon_prefix" type="number" class="validate">
-                            <label for="icon_prefix"><%= RS.getString(19)%>(Minority)</label>
+                            <label for="icon_prefix"><%= RS.getString(25)%>(Minority)</label>
                         </div>
                     </div>
                 </div>
@@ -336,17 +336,17 @@
 
                     <div class="input-field col s3 ">
                         <input required name="houseProposed" id="icon_prefix" type="number" class="validate">
-                        <label for="icon_prefix"><%= RS.getString(3)%>(HProposed)</label>
+                        <label for="icon_prefix"><%= RS.getString(26)%>(HProposed)</label>
                     </div>
                     <div class="input-field col s3 ">
                         <input required name="carpetArea" id="icon_prefix" type="number" class="validate" step = "0.01">
-                        <label for="icon_prefix"><%= RS.getString(3)%>(TCAinSq.mtr)</label>
+                        <label for="icon_prefix"><%= RS.getString(27)%>(TCAinSq.mtr)</label>
                     </div>
                 </div>
 
                 <p class="col"> Whether Beneficiary have been selected as per PMAY Guidelines:</p>
                 <%
-                    int a = Integer.parseInt(RS.getString(20));
+                    int a = Integer.parseInt(RS.getString(28));
                     if (a == 1) {
                 %>
                 <p class="col" style="margin-left:50px;">
@@ -379,7 +379,7 @@
                     <p class="col">Whether private partner has been selected through open competitive bidding ?</p>
 
                     <%
-                        int b = Integer.parseInt(RS.getString(21));
+                        int b = Integer.parseInt(RS.getString(29));
                         if (b == 1) {
                     %>
                     <p><input required name="privatePartner" type="radio" id="test01" value = "1" checked />
@@ -406,15 +406,15 @@
             <div class="row">
                 <div class="input-field col s3">
                     <input required name="fsiArea" id="icon_prefix" type="number" class="validate" step = "0.01">
-                    <label for="icon_prefix"><%= RS.getString(3)%>(Existing FSIA)</label>
+                    <label for="icon_prefix"><%= RS.getString(30)%>(Existing FSIA)</label>
                 </div>
                 <div class="input-field col s3">
                     <input required name="providedFsi" id="icon_prefix" type="number" class="validate" step = "0.01">
-                    <label for="icon_prefix"><%= RS.getString(3)%>(Provided FSIA)</label>
+                    <label for="icon_prefix"><%= RS.getString(31)%>(Provided FSIA)</label>
                 </div>
                 <div class="input-field col s3">
                     <input required name="otherIncentives" id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix"><%= RS.getString(3)%>(Other incentives)</label>
+                    <label for="icon_prefix"><%= RS.getString(32)%>(Other incentives)</label>
                 </div>
             </div>
 
@@ -424,15 +424,15 @@
             <div class="row houseGrant">
                 <div class="input-field col s3 houseGrant  ">
                     <input name="stateGrant" id="icon_prefix" type="number" class="validate" step = "0.01">
-                    <label for="icon_prefix"><%= RS.getString(24)%>(SG in lakh)</label>
+                    <label for="icon_prefix"><%= RS.getString(34)%>(SG in lakh)</label>
                 </div>
                 <div class="input-field col s3  houseGrant">
                     <input name="ulbGrant" id="icon_prefix" type="number" class="validate" step = "0.01">
-                    <label for="icon_prefix"><%= RS.getString(25)%>(ULB in lakh)</label>
+                    <label for="icon_prefix"><%= RS.getString(35)%>(ULB in lakh)</label>
                 </div>
                 <div class="input-field col s3 houseGrant">
                     <input name="benShare" id="icon_prefix" type="number" class="validate" step = "0.01">
-                    <label for="icon_prefix"><%= RS.getString(26)%>(BEN_S in lakh)</label>
+                    <label for="icon_prefix"><%= RS.getString(36)%>(BEN_S in lakh)</label>
                 </div>
             </div>
             <!--@-->
@@ -440,7 +440,7 @@
             <div class="row">
                 <p class="col"> Whether technical specification/dwelling unit design for housing have been ensured as per Indian Standards/NBC/State norms?</p>
                 <%
-                    int d = Integer.parseInt(RS.getString(27));
+                    int d = Integer.parseInt(RS.getString(37));
                     if (d == 1) {
                 %>
                 <p class="col" style="margin-left:50px;">
@@ -475,7 +475,7 @@
                 <div class="input-field col s8 slumName">
                     <select required name="arrangementType">
                         <%
-                            if (Integer.parseInt(RS.getString(3)) == 1) {
+                            if (Integer.parseInt(RS.getString(38)) == 1) {
                         %>
                         <option value="1">RENT (temporary arrangement for beneficiary.)</option>
                         <%
@@ -497,7 +497,7 @@
             <p>Whether trunk infrastructure is existing or is being provided through AMRUT or any other scheme?</p>
             <div class="row">
                 <%
-                    int f = Integer.parseInt(RS.getString(29));
+                    int f = Integer.parseInt(RS.getString(39));
                     if (f == 1) {
                 %>
                 <p><input required name="trunkInfrastructure" type="radio" id="test5" value = "1" checked/>
@@ -527,7 +527,7 @@
                 <p class="col">Water Supply: </p>
 
                 <%
-                    int x = Integer.parseInt(RS.getString(29));
+                    int x = Integer.parseInt(RS.getString(40));
                     if (x == 1) {
                 %>
                 <p class="col" style="margin-left:50px;">
@@ -557,7 +557,7 @@
             <div class="row">
                 <p class="col">Sewrage Facility: </p>
                 <%
-                    int g = Integer.parseInt(RS.getString(30));
+                    int g = Integer.parseInt(RS.getString(41));
                     if (g == 1) {
 
                 %>
@@ -588,7 +588,7 @@
             <div class="row">
                 <p class="col">Road Facility </p>
                 <%
-                    int h = Integer.parseInt(RS.getString(31));
+                    int h = Integer.parseInt(RS.getString(42));
                     if (h == 1) {
                 %>
                 <p class="col" style="margin-left:50px;">
@@ -618,7 +618,7 @@
             <div class="row">
                 <p class="col">Storm Water Drain </p>
                 <%
-                    int j = Integer.parseInt(RS.getString(32));
+                    int j = Integer.parseInt(RS.getString(43));
                     if (j == 1) {
                 %>
                 <p class="col" style="margin-left:50px;">
@@ -647,7 +647,7 @@
             <div class="row">
                 <p class="col">External Electrification</p>
                 <%
-                    int k = Integer.parseInt(RS.getString(33));
+                    int k = Integer.parseInt(RS.getString(44));
                     if (k == 1) {
                 %>
                 <p class="col" style="margin-left:50px;">
@@ -676,7 +676,7 @@
             <div class="row">
                 <p class="col">Solid Waste Management</p>
                 <%
-                    int m = Integer.parseInt(RS.getString(34));
+                    int m = Integer.parseInt(RS.getString(45));
                     if (m == 1) {
                 %>
                 <p class="col" style="margin-left:50px;">
@@ -713,7 +713,7 @@
                 <p class="col"> Whether disaster resistent features have been adopted 
                     in concept,design and implementation of the project? </p>
                     <%
-                        int n = Integer.parseInt(RS.getString(36));
+                        int n = Integer.parseInt(RS.getString(47));
                         if (n == 1) {
                     %>
                 <p class="col" style="margin-left:50px;">
@@ -748,7 +748,7 @@
             <div class="row">
                 <p class="col">Whether Quality Assurance is part of the Project, if not,how it is proposed to be ensured?</p>
                 <%
-                    int c = Integer.parseInt(RS.getString(22));
+                    int c = Integer.parseInt(RS.getString(48));
                     if (c == 1) {
                 %>
                 <p><input required name="qualityAssurance" type="radio" id="test19" value = "1" checked />
@@ -774,7 +774,7 @@
             <div class="row">
                 <p class="col">Whether O&M is part of Project, if yes, for how many years?</p>
                 <%
-                    int e = Integer.parseInt(RS.getString(28));
+                    int e = Integer.parseInt(RS.getString(49));
                     if (e == 1) {
                 %>
                 <p><input required name="onm" type="radio" id="test21" value = "1" checked/>
@@ -800,7 +800,7 @@
             <div class="row">
                 <p class="col"> Whether encumbrance free land is available for the project or not?</p>
                 <%
-                    int o = Integer.parseInt(RS.getString(37));
+                    int o = Integer.parseInt(RS.getString(50));
                     if (o == 1) {
                 %>
                 <p><input required name="freeLand" type="radio" id="test23" value = "1" checked/>
@@ -824,7 +824,7 @@
             <div class="row">
                 <p class="col">Whether any innovative/cost Effective/Green Technology adopted in the project?</p>
                 <%
-                    int t = Integer.parseInt(RS.getString(42));
+                    int t = Integer.parseInt(RS.getString(50));
                     if (t == 1) {
                 %>
 
@@ -855,14 +855,14 @@
             <div class="row"><p>Comments of SLAC after techno economic appraisal of DPR</p>
                 <div class="input-field col s8">
                     <textarea name="comments" id="textarea1" class="materialize-textarea"></textarea>
-                    <label for="textarea1"><%= RS.getString(3)%></label>
+                    <label for="textarea1"><%= RS.getString(51)%></label>
                 </div>
             </div>
 
             <div class="row"><p>Project brief including any other information ULB/State would like to furnish</p>
                 <div class="input-field col s8">
                     <textarea name="projectBrief" id="textarea1" class="materialize-textarea"></textarea>
-                    <label for="textarea1"><%= RS.getString(4)%></label>
+                    <label for="textarea1"><%= RS.getString(52)%></label>
                 </div>
             </div>
             <div class="row number">
