@@ -3,7 +3,7 @@
     Created on : 23 Mar, 2018, 3:08:52 PM
     Author     : Baseem
 --%>
-<%@page import="Beans.sevenCUpdateBean"%>
+<%@page import="Beans.sevenAUpdateBean"%>
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>BLC 7C Update</title>
+        <title>IN-SITU Update</title>
         <script src="../js/jquery-3.3.1.js"></script>
         <script src="../js/materialize.js"></script>
         <!-- <script src="../js/bootstrap.min.js"></script> -->
@@ -100,9 +100,9 @@
             //Creating the reference of type ResultSet
             ResultSet RS;
             //Creating the object of AdminVewRequestBean
-            sevenCUpdateBean obj = new sevenCUpdateBean();
+            sevenAUpdateBean obj = new sevenAUpdateBean();
             //Using the static show_Customer_NV() function of Customer
-            RS = obj.selectRecord7cUpdate(2);
+            RS = obj.selectRecord7aUpdate(2);
             int i = 1;
             while (RS.next()) {
 
@@ -175,6 +175,12 @@
                 </div>
                 <div class="row">
                     <div class="col input-field s3">
+                        <input name="cityName" id="icon_prefix" type="text" value="<%= RS.getString(4)%>" class="validate">
+                        <label for="icon_prefix">Slum Name</label>
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="col input-field s3">
                         <input name="projectName" id="project_name" type="text" value="<%= RS.getString(5)%>" class="validate">
                         <label for="project_name">Project Name</label>
                     </div>
@@ -202,104 +208,165 @@
                         </select>
                     </div>
                 </div>
-                <!--@--
-                <p class="row">Project Cost(In Lakhs):</p>-->
+                <div class="row">
+                    <div class="input-field col s3 ">
+                        <input required name="projectCost" id="icon_prefix" type="number" class="validate" step = "0.01">
+                        <label for="icon_prefix"><%= RS.getString(3)%>(Rs.InLakhs)</label>
+                    </div>
+                    <div class="input-field col s3 ">
+                        <input required name="projectDuration" id="icon_prefix" type="number" class="validate" step = "0.01">
+                        <label for="icon_prefix"><%= RS.getString(3)%>(In Months)</label>
+                    </div>
+                </div>
+                <!-- STATUS OF THE SLUM -->
+                <div class="row">
+                    <p class="row-2">Status of the Slum:</p>
+                    <div class="projectCode">
+                        <div style="width:180px; margin-right: 20px;"  class="row input-field s6 frm2 proCode">
+                            <select required name="slumStatus">
+                                <%
+                                    if (Integer.parseInt(RS.getString(3)) == 1) {
+                                %>
+                                <option value="1"><%= RS.getString(3)%></option>
+                                <%
+                                } else if (Integer.parseInt(RS.getString(3)) == 2) {
+                                %>
+                                <option value="2"><%= RS.getString(3)%></option>
+                                <%
+                                } else if (Integer.parseInt(RS.getString(3)) == 3) {
+                                %>
+                                <option value="3"><%= RS.getString(3)%></option>
+                                <option value="1">1(notified)</option>
+                                <option value="2">2(recognized)</option>
+                                <option value="3">3(identified)</option>
+                            </select>
+                        </div>
 
+                        <div style="width:150px; margin-right: 40px;" class="row number">
+                            <div class="input-field col proName">
+                                <input required style="width:150px" name="slumArea" id="icon_prefix" type="number" class="validate" step = "0.01">
+                                <label for="icon_prefix"><%= RS.getString(3)%>(Area of Slum)</label>
+                            </div>
+                        </div>
+                        <div  style="width:230px; margin-right: 40px;" class="row number">
+                            <div class="input-field col proName">
+                                <input required style="width:230px"  name="rehabilitationArea" id="icon_prefix" type="number" class="validate" step = "0.01">
+                                <label style="width:230px"  for="icon_prefix"><%= RS.getString(3)%>(Area under Rehabilitation)</label>
+                            </div>
+                        </div>
+                        <div style="width:130px;" class="row number">
+                            <div class="input-field col proName">
+                                <input required style="width: 140px;" name="slumPopulation" id="icon_prefix" type="number" class="validate">
+                                <label for="icon_prefix"><%= RS.getString(3)%>(Slum Population)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row ewsBeneficiaries">
 
-                    <p class="row">No. of Enhancement Beneficiaries covered in the Project:</p>
+                    <p class="row">Number of Existing Slum households:</p>
                     <div style="width:150px" class="col general">
                         <div class="input-field col ewsBeneficiaries">
 
-                            <input name="newBenGnrl" id="icon_prefix" type="number" class="validate">
+                            <input name="GEN" id="icon_prefix" type="number" class="validate">
                             <label for="icon_prefix"><%= RS.getString(10)%>(GEN)</label>
                         </div>
                     </div>
                     <div style="width:150px" class="col sc">
                         <div class="input-field col ewsBeneficiaries">
-                            <input name="newBenSC" id="icon_prefix" type="number" class="validate">
+                            <input name="SC" id="icon_prefix" type="number" class="validate">
                             <label for="icon_prefix"><%= RS.getString(11)%>(SC)</label>
                         </div>
                     </div> 
                     <div style="width:150px" class="col st">
                         <div class="input-field col ewsBeneficiaries">
-                            <input name="newBenST" id="icon_prefix" type="number" class="validate">
+                            <input name="ST" id="icon_prefix" type="number" class="validate">
                             <label for="icon_prefix"><%= RS.getString(12)%>(ST)</label>
                         </div>
                     </div>
                     <div style="width:150px" class="col obc">
                         <div class="input-field col ewsBeneficiaries">
-                            <input name="newBenOBC" id="icon_prefix" type="number" class="validate">
+                            <input name="OBC" id="icon_prefix" type="number" class="validate">
                             <label for="icon_prefix"><%= RS.getString(13)%>(OBC)</label>
                         </div>
                     </div>
                     <div style="width:150px" class="col minority">
                         <div class="input-field col ewsBeneficiaries ">
-                            <input name="newBenMinority" id="icon_prefix" type="number" class="validate">
+                            <input name="Minority" id="icon_prefix" type="number" class="validate">
                             <label for="icon_prefix"><%= RS.getString(14)%>(Minority)</label>
                         </div>
                     </div>
                 </div> 
                 <div class="row ewsBeneficiaries">
-                    <p class="row">No. of New Construction Beneficiaries covered in the Project:</p>
+                    <p class="row">Number of Eligible slum households:</p>
                     <div style="width:150px" class="col general">
                         <div class="input-field col ewsBeneficiaries">
-                            <input name="oldBenGnrl" id="icon_prefix" type="number" class="validate">
+                            <input name="GEN1" id="icon_prefix" type="number" class="validate">
                             <label for="icon_prefix"><%= RS.getString(15)%>(GEN)</label>
                         </div>
                     </div>
                     <div style="width:150px" class="col sc">
                         <div class="input-field col ewsBeneficiaries">
-                            <input name="oldBenSC" id="icon_prefix" type="number" class="validate">
+                            <input name="SC1" id="icon_prefix" type="number" class="validate">
                             <label for="icon_prefix"><%= RS.getString(16)%>(SC)</label>
                         </div>
                     </div> 
                     <div style="width:150px" class="col st">
                         <div class="input-field col ewsBeneficiaries">
-                            <input name="oldBenST" id="icon_prefix" type="number" class="validate">
+                            <input name="ST1" id="icon_prefix" type="number" class="validate">
                             <label for="icon_prefix"><%= RS.getString(17)%>(ST)</label>
                         </div>
                     </div>
                     <div style="width:150px" class="col obc">
                         <div class="input-field col ewsBeneficiaries">
-                            <input name="oldBenOBC" id="icon_prefix" type="number" class="validate">
+                            <input name="OBC1" id="icon_prefix" type="number" class="validate">
                             <label for="icon_prefix"><%= RS.getString(18)%>(OBC)</label>
                         </div>
                     </div>
                     <div style="width:150px" class="col minority">
                         <div class="input-field col ewsBeneficiaries ">
-                            <input name="oldBenMinority" id="icon_prefix" type="number" class="validate">
+                            <input name="Minority1" id="icon_prefix" type="number" class="validate">
                             <label for="icon_prefix"><%= RS.getString(19)%>(Minority)</label>
                         </div>
                     </div>
                 </div>
                 <!--@-->
 
+                <div class="row">
+
+                    <div class="input-field col s3 ">
+                        <input required name="houseProposed" id="icon_prefix" type="number" class="validate">
+                        <label for="icon_prefix"><%= RS.getString(3)%>(HProposed)</label>
+                    </div>
+                    <div class="input-field col s3 ">
+                        <input required name="carpetArea" id="icon_prefix" type="number" class="validate" step = "0.01">
+                        <label for="icon_prefix"><%= RS.getString(3)%>(TCAinSq.mtr)</label>
+                    </div>
+                </div>
+
                 <p class="col"> Whether Beneficiary have been selected as per PMAY Guidelines:</p>
-
-
                 <%
                     int a = Integer.parseInt(RS.getString(20));
                     if (a == 1) {
                 %>
                 <p class="col" style="margin-left:50px;">
                     <input required class="with-gap" name="pmayGuidelines" type="radio" id="test1" value = "1" checked/>
-                    <label for="test1" >Yes</label>
+                    <label for="icon_prefix" >Yes</label>
                 </p>
                 <p class="col" style="margin-left:50px;">
                     <input required class="with-gap" name="pmayGuidelines" type="radio" id="test2" value = "0"/>
-                    <label for="test2">No</label>
+                    <label for="icon_prefix">No</label>
                 </p>
                 <%
                 } else {
                 %>
                 <p class="col" style="margin-left:50px;">
                     <input required class="with-gap" name="pmayGuidelines" type="radio" id="test1" value = "1"/>
-                    <label for="test1" >Yes</label>
+                    <label for="icon_prefix" >Yes</label>
                 </p>
                 <p class="col" style="margin-left:50px;">
                     <input required class="with-gap" name="pmayGuidelines" type="radio" id="test2" value = "0" checked/>
-                    <label for="test2">No</label>
+                    <label for="icon_prefix">No</label>
                 </p>
                 <%
                     }
@@ -309,142 +376,150 @@
 
                 <!--@-->
                 <div class="row">
-                    <p class="col">Whether it has been ensured that selected Beneficiaries have rightfull ownership of the land?</p>
+                    <p class="col">Whether private partner has been selected through open competitive bidding ?</p>
 
                     <%
                         int b = Integer.parseInt(RS.getString(21));
                         if (b == 1) {
                     %>
-                    <p class="col" style="margin-left:50px;">
-                        <input required class="with-gap" name="ownershipEnsured" type="radio" id="test3" value = "1" checked/>
-                        <label for="test3" >Yes</label>
-                    </p>
-                    <p class="col" style="margin-left:50px;">
-                        <input required class="with-gap" name="ownershipEnsured" type="radio" id="test4" value = "0" />
-                        <label for="test4">No</label>
-                    </p>
+                    <p><input required name="privatePartner" type="radio" id="test01" value = "1" checked />
+                        <label for="icon_prefix">Yes</label>
+                        <input required name="privatePartner" type="radio" id="test02" value = "0"/>
+                        <label for="icon_prefix">No</label>
+                    </p>   
+
                     <%
                     } else {
                     %>
-                    <p class="col" style="margin-left:50px;">
-                        <input required class="with-gap" name="ownershipEnsured" type="radio" id="test3" value = "1" />
-                        <label for="test3" >Yes</label>
-                    </p>
-                    <p class="col" style="margin-left:50px;">
-                        <input required class="with-gap" name="ownershipEnsured" type="radio" id="test4" value = "0" checked/>
-                        <label for="test4">No</label>
-                    </p>
-                    <%
-                        }
-                    %>
+                    <p><input required name="privatePartner" type="radio" id="test01" value = "1"/>
+                        <label for="icon_prefix">Yes</label>
+                        <input required name="privatePartner" type="radio" id="test02" value = "0" checked />
+                        <label for="icon_prefix">No</label>
+                    </p>   
+                </div>                
+                <%
+                    }
+                %>
+            </div>
+            <!--**************************************************************-->
+            <p style="margin-left:10px;">Incentives to Private Partner : </p>
+            <div class="row">
+                <div class="input-field col s3">
+                    <input required name="fsiArea" id="icon_prefix" type="number" class="validate" step = "0.01">
+                    <label for="icon_prefix"><%= RS.getString(3)%>(Existing FSIA)</label>
                 </div>
-                <div class="row">
-                    <p class="col">Whether building plan for all houses have been approved?</p>
-                    <%
-                        int c = Integer.parseInt(RS.getString(22));
-                        if (c == 1) {
-                    %>
-                    <p class="col" style="margin-left:50px;">
-                        <input required class="with-gap" name="buildingPlanApproval" type="radio" id="test30" value = "1" checked/>
-                        <label for="test30" >Yes</label>
-                    </p>
-                    <p class="col" style="margin-left:50px;">
-                        <input required class="with-gap" name="buildingPlanApproval" type="radio" id="test40" value = "0"/>
-                        <label for="test40">No</label>
-                    </p>
-                    <%
-                    } else {
-                    %>
-                    <p class="col" style="margin-left:50px;">
-                        <input required class="with-gap" name="buildingPlanApproval" type="radio" id="test30" value = "1"/>
-                        <label for="test30" >Yes</label>
-                    </p>
-                    <p class="col" style="margin-left:50px;">
-                        <input required class="with-gap" name="buildingPlanApproval" type="radio" id="test40" value = "0" checked />
-                        <label for="test40">No</label>
-                    </p>
-                    <%
-                        }
-                    %>
+                <div class="input-field col s3">
+                    <input required name="providedFsi" id="icon_prefix" type="number" class="validate" step = "0.01">
+                    <label for="icon_prefix"><%= RS.getString(3)%>(Provided FSIA)</label>
                 </div>
-                <!--@-->
-                <!--#-->
-                <p class="row">Govt. Grant required(Rs. 1.50 Lakh per eligible beneficiary)(Rs. In Lakhs):</p>
-                <div class="row houseGrant">
-                    <div class="input-field col s3 houseGrant  ">
-                        <input name="stateGrant" id="icon_prefix" type="number" class="validate" step = "0.01">
-                        <label for="icon_prefix"><%= RS.getString(24)%>(SG in lakh)</label>
-                    </div>
-                    <div class="input-field col s3  houseGrant">
-                        <input name="ulbGrant" id="icon_prefix" type="number" class="validate" step = "0.01">
-                        <label for="icon_prefix"><%= RS.getString(25)%>(ULB in lakh)</label>
-                    </div>
-                    <div class="input-field col s3 houseGrant">
-                        <input name="benShare" id="icon_prefix" type="number" class="validate" step = "0.01">
-                        <label for="icon_prefix"><%= RS.getString(26)%>(BEN_S in lakh)</label>
-                    </div>
-                </div>
-                <!--@-->
-                <div class="row">
-                    <p class="col"> Whether technical Specification/design for housing have been ensured as per Indian Standards/NBC/State Norms:</p>
-                    <%
-                        int d = Integer.parseInt(RS.getString(27));
-                        if (d == 1) {
-                    %>
-                    <p class="col" style="margin-left:50px;">
-                        <input required class="with-gap" name="techSpecification" type="radio" id="test7" value = "1" checked/>
-                        <label for="test7" >Yes</label>
-                    </p>
-                    <p class="col" style="margin-left:50px;">
-                        <input required class="with-gap" name="techSpecification" type="radio" id="test8" value = "0"/>
-                        <label for="test8">No</label>
-                    </p>
-                    <%
-                    } else {
-                    %>
-                    <p class="col" style="margin-left:50px;">
-                        <input required class="with-gap" name="techSpecification" type="radio" id="test7" value = "1"/>
-                        <label for="test7" >Yes</label>
-                    </p>
-                    <p class="col" style="margin-left:50px;">
-                        <input required class="with-gap" name="techSpecification" type="radio" id="test8" value = "0" checked />
-                        <label for="test8">No</label>
-                    </p>
-                    <%
-                        }
-                    %>
+                <div class="input-field col s3">
+                    <input required name="otherIncentives" id="icon_prefix" type="text" class="validate">
+                    <label for="icon_prefix"><%= RS.getString(3)%>(Other incentives)</label>
                 </div>
             </div>
+
+            <!--**************************************************************-->
+            <!--#-->
+            <p class="row">Govt. Grant required(Rs. 1.50 Lakh per eligible beneficiary)(Rs. In Lakhs):</p>
+            <div class="row houseGrant">
+                <div class="input-field col s3 houseGrant  ">
+                    <input name="stateGrant" id="icon_prefix" type="number" class="validate" step = "0.01">
+                    <label for="icon_prefix"><%= RS.getString(24)%>(SG in lakh)</label>
+                </div>
+                <div class="input-field col s3  houseGrant">
+                    <input name="ulbGrant" id="icon_prefix" type="number" class="validate" step = "0.01">
+                    <label for="icon_prefix"><%= RS.getString(25)%>(ULB in lakh)</label>
+                </div>
+                <div class="input-field col s3 houseGrant">
+                    <input name="benShare" id="icon_prefix" type="number" class="validate" step = "0.01">
+                    <label for="icon_prefix"><%= RS.getString(26)%>(BEN_S in lakh)</label>
+                </div>
+            </div>
+            <!--@-->
+
             <div class="row">
-                <p class="col">Whether it has been ensured that balance cost of construction is tied up with State Grant, ULB Grant and Beneficiary Share? </p>
+                <p class="col"> Whether technical specification/dwelling unit design for housing have been ensured as per Indian Standards/NBC/State norms?</p>
                 <%
-                    int e = Integer.parseInt(RS.getString(28));
-                    if (e == 1) {
+                    int d = Integer.parseInt(RS.getString(27));
+                    if (d == 1) {
                 %>
                 <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="ensuredBalanceCost" type="radio" id="test9" value = "1" checked />
-                    <label for="test9" >Yes</label>
+                    <input required class="with-gap" name="techSpecification" type="radio" id="test7" value = "1" checked/>
+                    <label for="test7" >Yes</label>
                 </p>
                 <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="ensuredBalanceCost" type="radio" id="test10" value = "0"/>
-                    <label for="test10">No</label>
+                    <input required class="with-gap" name="techSpecification" type="radio" id="test8" value = "0"/>
+                    <label for="test8">No</label>
                 </p>
                 <%
                 } else {
                 %>
                 <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="ensuredBalanceCost" type="radio" id="test9" value = "1"/>
-                    <label for="test9" >Yes</label>
+                    <input required class="with-gap" name="techSpecification" type="radio" id="test7" value = "1"/>
+                    <label for="test7" >Yes</label>
                 </p>
                 <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="ensuredBalanceCost" type="radio" id="test10" value = "0" checked />
-                    <label for="test10">No</label>
+                    <input required class="with-gap" name="techSpecification" type="radio" id="test8" value = "0" checked />
+                    <label for="test8">No</label>
                 </p>
                 <%
                     }
                 %>
-            </div> 
+            </div>
 
+            <!--*****************************-->
+            <%}
+            %>
+
+            <div class="row" >
+                <div class="input-field col s8 slumName">
+                    <select required name="arrangementType">
+                        <%
+                            if (Integer.parseInt(RS.getString(3)) == 1) {
+                        %>
+                        <option value="1">RENT (temporary arrangement for beneficiary.)</option>
+                        <%
+                        } else {
+                        %>
+                        <option value="2">TRANSIT SHELTER(temporary arrangement for beneficiary.)</option>
+                        <%
+                            }
+                        %>         
+                        <option value="1">RENT</option>
+                        <option value="2">TRANSIT SHELTER</option> 
+                    </select>
+                </div>
+            </div>
+
+
+            <!--*****************************-->
+
+            <p>Whether trunk infrastructure is existing or is being provided through AMRUT or any other scheme?</p>
+            <div class="row">
+                <%
+                    int f = Integer.parseInt(RS.getString(29));
+                    if (f == 1) {
+                %>
+                <p><input required name="trunkInfrastructure" type="radio" id="test5" value = "1" checked/>
+                    <label for="test5">Yes</label>
+                    <input required name="trunkInfrastructure" type="radio" id="test6" value = "0"/>
+                    <label for="test6">No</label>
+                </p>   
+
+                <%
+                } else {
+                %>
+                <p><input required name="trunkInfrastructure" type="radio" id="test5" value = "1"/>
+                    <label for="test5">Yes</label>
+                    <input required name="trunkInfrastructure" type="radio" id="test6" value = "0" checked/>
+                    <label for="test6">No</label>
+                </p>   
+                <%
+                    }
+                %>
+            </div>
+
+            <!--*****************************-->
 
 
             <p>Whether trunk and line infrastructure is existing or being provisioned? </p>
@@ -452,8 +527,8 @@
                 <p class="col">Water Supply: </p>
 
                 <%
-                    int f = Integer.parseInt(RS.getString(29));
-                    if (f == 1) {
+                    int x = Integer.parseInt(RS.getString(29));
+                    if (x == 1) {
                 %>
                 <p class="col" style="margin-left:50px;">
                     <input required class="with-gap" name="waterSupply" type="radio" id="test11" value = "1" checked />
@@ -494,8 +569,7 @@
                     <input required class="with-gap" name="sewerageFacility" type="radio" id="test14" value = "0"/>
                     <label for="test14">No</label>
                 </p>
-                <%               
-                    } else {
+                <%                } else {
                 %>
                 <p class="col" style="margin-left:50px;">
                     <input required class="with-gap" name="sewerageFacility" type="radio" id="test13" value = "1"/>
@@ -662,157 +736,91 @@
                     <label for="test22">No</label>
                 </p>
                 <%
-                        }
+                    }
                 %>
             </div>
+            <!--*****************************************************-->
+
+
+
+
+
             <div class="row">
-                <p class="col"> Whether Demand Survey completed for entire city? </p>
+                <p class="col">Whether Quality Assurance is part of the Project, if not,how it is proposed to be ensured?</p>
+                <%
+                    int c = Integer.parseInt(RS.getString(22));
+                    if (c == 1) {
+                %>
+                <p><input required name="qualityAssurance" type="radio" id="test19" value = "1" checked />
+                    <label for="test19">Yes</label>
+                    <input required name="qualityAssurance" type="radio" id="test20" value = "0"/>
+                    <label for="test20">No</label>
+                </p>   
+                <%
+                } else {
+                %>
+                <p><input required name="qualityAssurance" type="radio" id="test19" value = "1"/>
+                    <label for="test19">Yes</label>
+                    <input required name="qualityAssurance" type="radio" id="test20" value = "0" checked/>
+                    <label for="test20">No</label>
+                </p>   
+                <%
+                    }
+                %>
+            </div>
+            <!--@-->
+
+
+            <div class="row">
+                <p class="col">Whether O&M is part of Project, if yes, for how many years?</p>
+                <%
+                    int e = Integer.parseInt(RS.getString(28));
+                    if (e == 1) {
+                %>
+                <p><input required name="onm" type="radio" id="test21" value = "1" checked/>
+                    <label for="test21">Yes</label>
+                    <input required name="onm" type="radio" id="test22" value = "0"/>
+                    <label for="test22">No</label>
+                </p>   
+                <%
+                } else {
+                %>
+                <p><input required name="onm" type="radio" id="test21" value = "1"/>
+                    <label for="test21">Yes</label>
+                    <input required name="onm" type="radio" id="test22" value = "0" checked/>
+                    <label for="test22">No</label>
+                </p>   
+                <%
+                    }
+                %>
+            </div> 
+
+
+
+            <div class="row">
+                <p class="col"> Whether encumbrance free land is available for the project or not?</p>
                 <%
                     int o = Integer.parseInt(RS.getString(37));
                     if (o == 1) {
                 %>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="demandSurvey" type="radio" id="test23" value = "1" checked/>
-                    <label for="test23" >Yes</label>
-                </p>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="demandSurvey" type="radio" id="test24" value = "0"/>
+                <p><input required name="freeLand" type="radio" id="test23" value = "1" checked/>
+                    <label for="test23">Yes</label>
+                    <input required name="freeLand" type="radio" id="test24" value = "0"/>
                     <label for="test24">No</label>
-                </p>
+                </p>   
                 <%
                 } else {
                 %>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="demandSurvey" type="radio" id="test23" value = "1"/>
-                    <label for="test23" >Yes</label>
-                </p>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="demandSurvey" type="radio" id="test24" value = "0" checked/>
+                <p><input required name="freeLand" type="radio" id="test23" value = "1"/>
+                    <label for="test23">Yes</label>
+                    <input required name="freeLand" type="radio" id="test24" value = "0" checked/>
                     <label for="test24">No</label>
-                </p>
+                </p>   
                 <%
                     }
                 %>
             </div>
 
-            <div class="row">
-                <p class="col">Whether city-wide integrated project have been formulated?</p>
-                <%
-                    int p = Integer.parseInt(RS.getString(38));
-                    if (p == 1) {
-                %>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="cityWideurvey" type="radio" id="test25" value = "1" checked/>
-                    <label for="test25" >Yes</label>
-                </p>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="cityWideurvey" type="radio" id="test26" value = "0"/>
-                    <label for="test26">No</label>
-                </p>
-                <%
-                } else {
-                %>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="cityWideurvey" type="radio" id="test26" value = "1"/>
-                    <label for="test25">Yes</label>
-                </p>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="cityWideurvey" type="radio" id="test26" value = "0" checked/>
-                    <label for="test26">No</label>
-                </p>
-                <%
-                    }
-                %>
-            </div>
-            <div class="row">
-                <p class="col">Whether validation with SECC date for housing condition conducted?</p>
-                <%
-                    int q = Integer.parseInt(RS.getString(39));
-                    if (q == 1) {
-                %>            
-
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="validationWithSECC" type="radio" id="test27" value = "1" checked/>
-                    <label for="test27" >Yes</label>
-                </p>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="validationWithSECC" type="radio" id="test28" value = "0"/>
-                    <label for="test28">No</label>
-                </p>
-                <%
-                } else {
-                %>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="validationWithSECC" type="radio" id="test27" value = "1"/>
-                    <label for="test27" >Yes</label>
-                </p>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="validationWithSECC" type="radio" id="test28" value = "0" checked/>
-                    <label for="test28">No</label>
-                </p>
-                <%
-                    }
-                %>
-            </div>
-
-            <div class="row">
-                <p class="col">Whether direct benefit transfer of fund to individual bank account of beneficiary ensured in the project?</p>
-                <%
-                    int r = Integer.parseInt(RS.getString(40));
-                    if (r == 1) {
-                %>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="directBenefitTransfer" type="radio" id="test290" value = "1" checked/>
-                    <label for="test290" >Yes</label>
-                </p>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="directBenefitTransfer" type="radio" id="test300" value = "0"/>
-                    <label for="test300">No</label>
-                </p>
-                <%
-                } else {
-                %>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="directBenefitTransfer" type="radio" id="test290" value = "1"/>
-                    <label for="test290" >Yes</label>
-                </p>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="directBenefitTransfer" type="radio" id="test300" value = "0" checked/>
-                    <label for="test300">No</label>
-                </p>
-                <%
-                    }
-                %>
-            </div>
-            <div class="row">
-                <p class="col">Whether there is provision in DPR for tracking/monitoring the progress of individual houses through geo-tagged photographs?</p>
-                <%
-                    int s = Integer.parseInt(RS.getString(41));
-                    if (s == 1) {
-                %>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="geoTagInDPR" type="radio" id="test31" value = "1" checked/>
-                    <label for="test31" >Yes</label>
-                </p>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="geoTagInDPR" type="radio" id="test32" value = "0"/>
-                    <label for="test32">No</label>
-                </p>
-                <%
-                } else {
-                %>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="geoTagInDPR" type="radio" id="test31" value = "1" />
-                    <label for="test31" >Yes</label>
-                </p>
-                <p class="col" style="margin-left:50px;">
-                    <input required class="with-gap" name="geoTagInDPR" type="radio" id="test32" value = "0" checked/>
-                    <label for="test32">No</label>
-                </p>
-                <%
-                    }
-                %>
-            </div>
             <div class="row">
                 <p class="col">Whether any innovative/cost Effective/Green Technology adopted in the project?</p>
                 <%
@@ -843,24 +851,33 @@
                     }
                 %>
             </div>
-            <div class="row">
-                <div class="col input-field s12">
-                    <input name="otherInfo" id="otherInfo" type="text" class="validate">
-                    <label for="projectBrief"><%= RS.getString(44)%>(story)</label>
+
+            <div class="row"><p>Comments of SLAC after techno economic appraisal of DPR</p>
+                <div class="input-field col s8">
+                    <textarea name="comments" id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1"><%= RS.getString(3)%></label>
                 </div>
             </div>
 
-
-
-            <div style="alignment-adjust: central;" class="row">
-                <div class="col">
-                    <a class="waves-effect waves-light btn"><input name="Save" type="submit"></a>
+            <div class="row"><p>Project brief including any other information ULB/State would like to furnish</p>
+                <div class="input-field col s8">
+                    <textarea name="projectBrief" id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1"><%= RS.getString(4)%></label>
                 </div>
-            </div> 
-            <%
-                }
-            %>
+            </div>
+            <div class="row number">
+                <div class="input-field col proName">
+                    <button name="submitbtn" type="submit" class="waves-effect waves-light btn fbtn">Submit</button>
+                </div>
+            </div>
+            <div class="row number">
+                <div class="input-field col proName">
+                    <button name="canclebtn" class="waves-effect waves-light btn fbtn">Cancle</button>
+                </div>
+            </div>
         </form>
+        <!--*****************************************************************-->
+
         <div>
             <br><br><br>
             <jsp:include page="../Footer.jspf"/>

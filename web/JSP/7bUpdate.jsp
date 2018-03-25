@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>BLC 7C Update</title>
+        <title>AHP 7b Update</title>
         <script src="../js/jquery-3.3.1.js"></script>
         <script src="../js/materialize.js"></script>
         <!-- <script src="../js/bootstrap.min.js"></script> -->
@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="../css/materialize.css">
         <link rel="stylesheet" href="../css/material.css">
         <link rel="stylesheet" href="../css/style1.css">
+        <link rel="stylesheet" href="../css/Header_Final.css">
         <script>
             $(document).ready(function () {
                 $('select').material_select();

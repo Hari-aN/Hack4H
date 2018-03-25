@@ -22,13 +22,13 @@
         <div class="col">
             <ul class="tabs" style="background-color: #f4511e">
                 <li class="tab main-nav"><a style="color: white;" href="#home">Home</a></li>
-                <li class="tab main-nav"><a style="color: white;" href="http://localhost:8080/Hack2k18_PMAY/JSP/aboutUs.jsp">About Us</a></li>
+                <li class="tab main-nav"><a style="color: white;" href="JSP/aboutUs.jsp">About Us</a></li>
                 <li class="tab main-nav"><a style="color: white;" href="#guidelines">Guidelines</a></li>
                 <li class="tab main-nav"><a style="color: white;" href="#knowledge">Knowledge Network</a></li>
                 <li class="tab main-nav"><a style="color: white;" href="#photo">Photo Gallery</a></li>
                 <li class="tab main-nav"><a style="color: white;" href="#contact">Contact Us</a></li>
                 <li class="tab main-nav"><a style="color: white;" href="#housing">Housing Technologies</a></li>
-                <li class="tab main-nav"><a style="color: white;" href="http://localhost:8080/Hack2k18_PMAY/JSP/login_admins.jsp">Stakeholder Login</a></li>
+                <li class="tab main-nav"><a style="color: white;" href="JSP/login_admins.jsp">Stakeholder Login</a></li>
             </ul>
         </div>
     </center>
@@ -36,7 +36,7 @@
         <marquee direction="left">For Technical support contact us at PMAYG Helpline No. 1800-11-6446 , Mail us at support-pmayg@gov.in</marquee>
         <hr style="margin-top: -0.4px;">
         <ul style="margin-top:10px;">
-            
+
             <li><a style="margin-left: 125px;;background-color: #f4511e" class="col waves-effect btn marbtn" href="#!">Data Entry</a></li>
             <li><a style="margin-left: 125px;;background-color: #f4511e" class="col waves-effect btn marbtn" href="#!">Report</a></li>
             <li><a style="margin-left: 125px;;background-color: #f4511e" class="col waves-effect btn marbtn" href="#!">FTO Tracking</a></li>
@@ -44,7 +44,10 @@
             <li><a style="margin-left: 125px;;background-color: #f4511e" class="col waves-effect btn marbtn" href="#!">Performance</a></li>
         </ul>
     </div>
-    
-    
+    <div>
+        <br><br><br>
+        <jsp:include page="Footer.jspf"/>
+    </div> 
+
 </body> 
 </html>
