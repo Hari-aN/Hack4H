@@ -113,11 +113,12 @@
             <img src="../images/pmay.png" style="height:120px; width: 70%; margin-left: -5px;" alt="">
             <jsp:include page="../ULB_Header.jspf"/>
         </div> 
+        <br>
         <nav class="header" style="margin-left: 10%;width:80%;">
             <div class="nav-wrapper" style="margin-left: 20%;width:80%; background-color: green;">
                 <p style ="padding-left: 60px; font-size: 20px; padding-top:20px;">Beneficiary led Construction or Enhancement</p >
             </div>    
-        </nav>  
+        </nav><br>  
         <form action="http://localhost:8080/Hack2k18_PMAY/BLC_ULB_DPR_Update" method = "POST" style="background-color: #FFEBEE;border-width: 2px;border-radius: 20px;margin-left: 10%;width:80%;">
             <div class="row">
                 <div class="col input-field s3">

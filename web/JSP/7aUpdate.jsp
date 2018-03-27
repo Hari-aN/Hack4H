@@ -3,7 +3,8 @@
     Created on : 23 Mar, 2018, 3:08:52 PM
     Author     : Baseem
 --%>
-<%@page import="Beans.sevenAUpdateBean"%>
+<%@page import="Beans.sevenCUpdateBean"%>
+
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
@@ -100,11 +101,11 @@
             //Creating the reference of type ResultSet
             ResultSet RS;
             //Creating the object of AdminVewRequestBean
-            sevenAUpdateBean obj = new sevenAUpdateBean();
+            sevenCUpdateBean obj = new sevenCUpdateBean();
             //Using the static show_Customer_NV() function of Customer
-            RS = obj.selectRecord7aUpdate(2);
+           RS = obj.selectRecord7cUpdate(2);
             int i = 1;
-            while (RS.next()) {
+           while (RS.next()) {
 
         %>
 

@@ -24,7 +24,7 @@ public class sevenCUpdateBean extends model.DBModel {
 
             RS1 = queryReturner(QUERY);
         } catch (SQLException ex) {
-            Logger.getLogger(selective_BENdataBean.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(selective_AdminRequestBean.class.getName()).log(Level.SEVERE, null, ex);
         }
         return RS1;
     }
