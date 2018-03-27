@@ -30,7 +30,6 @@
         <style>
 
             input {margin-bottom: 5px; padding: 2px 3px; width: 98px;}
-
         </style>
     </head>
     <body>
@@ -40,22 +39,37 @@
             <jsp:include page="../../ULB_Header.jspf"/>
         </div>
         <br>
-        <nav class="aboutHead" style="width: 80%; margin-left: 10%; background-color: red;">
+<!--        <nav class="aboutHead" style="width: 80%; margin-left: 10%; background-color: red;">
             <div class="nav-wrapper" style="margin-left: 10%;width:80%; background-color: green;">
                 <center><h3 style="margin-left:60px;">|Beneficiary Record|</h3></center>
             </div>
+        </nav>-->
+<div align="center">
+        <nav class="aboutHead" style="width: 80%; background-color: red;">
+            <div class="nav-wrapper" style=";width:80%; background-color: green;">
+                <center><h3 style="">|Beneficiary Record|</h3></center>
+            </div>
         </nav>
-        <br><br>
-        <form>
-            <div id="search_div">
-                <div id="s1"><input type="text" id="search1" placeholder="Type to search"></div>
-                <div id="s2"><input type="text" id="search2" placeholder="Type to search"></div>
-                <div id="s3"><input type="text" id="search3" placeholder="Type to search"></div>
-                <div><input name="Submit" type="submit"></div>
+</div>
+<form>
+            <div align="center" style="margin-left:10%;" id="search_div" class="row">
+                <div class="s4 input-field col">
+                    <input name="cityName" id="search1" type="text" class="validate">
+                    <label for="search1">Type to Search</label>
+                </div>
+                <div class="s4 input-field col">
+                    <input name="cityName" id="search2" type="text" class="validate">
+                    <label for="search2">Type to Search</label>
+                </div>
+                <div class="s4 input-field col">
+                    <input name="cityName" id="search3" type="text" class="validate">
+                    <label for="search3">Type to Search</label>
+                </div>
+                <!--<div><input name="Submit" type="submit"></div>-->
             </div>
         </form>
+        <!--<br><br>-->
         <form  action="">
-            <div>
                 <div>
                     <div style="overflow-x:auto; margin-left: 120px;">
                         <table id="table" border="1" WIDTH="100%" >

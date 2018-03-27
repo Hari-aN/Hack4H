@@ -25,6 +25,7 @@
         <script src="../../js/jquery-3.3.1.js"></script>
         <script src="../../js/materialize.js"></script>
         <script src="../../js/material.js"></script>
+        <script src="../../js/sendData.js"></script>
         <link rel="stylesheet" href="../../css/style.css">
         <link rel="stylesheet" href="../../css/materialize.css">
         <link rel="stylesheet" href="../../css/material.css">
@@ -47,10 +48,12 @@
         </nav>
         <br><br>
         <div>
+            <p><span>row index: </span><span id="delegation-idx">unknown</span></p>
+            <br>
             <form  action=""  >
                 <div class="">
                     <div style="overflow-x:auto; margin-left: 120px;"  >
-                        <table border ="1" WIDTH="100%">
+                        <table id="table-delegate" border ="1" WIDTH="100%">
                             <tr><th>S_NO</th>
                                 <th>SURVEY_NO</th>
                                 <th>NAME</th>
@@ -76,6 +79,14 @@
                                 <td><%= i%></td>
 
                                 <td><%= RS.getString(1)%></td>
+                                <%
+
+                                    HttpSession session1 = request.getSession(true);
+
+                                    session1.setAttribute("surveyNo" + i, RS.getString(1));
+
+
+                                %>
                                 <td><%= RS.getString(2)%></td>
                                 <td><%= RS.getString(3)%></td>
                                 <%//printing gender for selection START************
@@ -142,10 +153,10 @@
                                 <td>OTHER</td>
                                 <%
                                     }//printing religion for selection  END***********
-%>                          <td><%= RS.getString(7)%></td>
+                                %>                          <td><%= RS.getString(7)%></td>
 
 
-                                <td><a href="http://localhost:8080/Hack2k18_PMAY/JSP/7cUpdate.jsp">add</a></td>
+                                <td><a href="http://localhost:8080/Hack2k18_PMAY/JSP/7cUpdate.jsp" >add</a></td>
                                 <%
 
                                         i++;
@@ -158,7 +169,21 @@
 
                     </div>
                 </div>
+                <p><span>row index: </span><span id="direct-idx">unknown</span></p>
+                <script>
+                    $("#table-delegate").on("click", "tr", function (e) {
+                        var idx = $(e.currentTarget).index() + 1;
+                        $("#delegation-idx").text(idx);
+                        console.log('delegated6', idx);
+                        <%
+                        
+                        
+                        %>
+                    });
+
+                </script>
             </form>
+
         </div>
 
         <div>
