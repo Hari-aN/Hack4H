@@ -47,63 +47,64 @@
             <div class="">
                 <div style="overflow-x:auto; margin-left: 120px;">
                     <table border="1" WIDTH="100%" >
-                        <tr><th>S.NO.</th>
-                            <th>P_PROJECT_NO</th>
-                            <th>STATE</th>
-                            <th>DISTRICT</th>
-                            <th>CITY</th>
-                            <th>PORJECT_NM</th>
-                            <th>PROJECT_CODE</th>
-                            <th>SLNA_NM</th>
-                            <th>IA_NAME</th>
-                            <th>HOUSING_COST</th>
-                            <th>INFRA_COST</th>
-                            <th>OTHER_COST</th>
-                            <th>EWS_GEN</th>
-                            <th>EWS_SC</th>
-                            <th>ESW_ST</th>
-                            <th>EWS_OBC</th>
-                            <th>EWS_MINORITY</th>
-                            <th>PMAY_GUIDELINES</th>
-                            <th>COST_EWS_UNIT</th>
-                            <th>PROJECT_DURATION</th>
-                            <th>STATE_SALES_PRICE</th>
-                            <th>CARPET_AREA_EWS</th>
-                            <th>EWS_UNIT</th>
-                            <th>LIG_UNIT</th>
-                            <th>MIG_UNIT</th>
-                            <th>HIG_UNIT</th>
-                            <th>COMMERCIAL_UNIT</th>
-                            <th>PROCEDURE_PPP</th>
-                            <th>ELIGIBLE_EWS</th>
-                            <th>CENTRAL_GRANT</th>
-                            <th>STATE_GRANT</th>
-                            <th>LAND_COST</th>
-                            <th>CASH_GRANT</th>
-                            <th>IA_SHARE</th>
-                            <th>BEN_SHARE</th>
-                            <th>TECH_SPECIFICATION</th>
-                            <th>TRUNK_INFRA</th>
-                            <th>WATER</th>
-                            <th>SEWERAGE</th>
-                            <th>ROAD</th>
-                            <th>WATER_DRAIN</th>
-                            <th>ELECTRIFICATION</th>
-                            <th>WASTE_MANAGEMENT</th>
-                            <th>OTHER_INFRA</th>
-                            <th>SOCIAL_INFRA</th>
-                            <th>DISASTER_RESISTANT</th>
-                            <th>QUALITY_ASSURANCE</th>
-                            <th>Q_N_M</th>
-                            <th>ENCUMB_FREE_LAND</th>
-                            <th>GREEN_TECH</th>
-                            <th>SLAC_COMMENT</th>
-                            <th>OTHER_INFO</th>
-                            <th>SUBMISSION_TO_SLSMC</th>
-                            <th>SLSMC_FEEDBACK</th>
-                            <th>CSMC_FEEDBACK</th>
-                            <th>STATUS</th>
-                            <th>SLSMC_APPROVAL</th>
+                        <tr>
+                            <th><div style="width:50px;">S.NO.</div></th>
+                            <th><div style="width:110px;">P_PROJECT_NO</div></th>
+                            <th><div style="width:100px;">STATE</div></th>
+                            <th><div style="width:100px;">DISTRICT</div></th>
+                            <th><div style="width:60px;">CITY</div></th>
+                            <th><div style="width:130px;">PORJECT_NM</div></th>
+                            <th><div style="width:150px;">PROJECT_CODE</div></th>
+                            <th><div style="width:140px;">SLNA_NM</div></th>
+                            <th><div style="width:80px;">IA_NAME</div></th>
+                            <th><div style="width:100px;">HOUSING_COST</div></th>
+                            <th><div style="width:100px;">INFRA_COST</div></th>
+                            <th><div style="width:100px;">OTHER_COST</div></th>
+                            <th><div style="width:80px;">EWS_GEN</div></th>
+                            <th><div style="width:80px;">EWS_SC</div></th>
+                            <th><div style="width:80px;">ESW_ST</div></th>
+                            <th><div style="width:80px;">EWS_OBC</div></th>
+                            <th><div style="width:120px;">EWS_MINORITY</div></th>
+                            <th><div style="width:200px;">PMAY_GUIDELINES</div></th>
+                            <th><div style="width:180px;">COST_EWS_UNIT</div></th>
+                            <th><div style="width:200px;">PROJECT_DURATION</div></th>
+                            <th><div style="width:180px;">STATE_SALES_PRICE</div></th>
+                            <th><div style="width:120px;">CARPET_AREA_EWS</div></th>
+                            <th><div style="width:80px;">EWS_UNIT</div></th>
+                            <th><div style="width:80px;">LIG_UNIT</div></th>
+                            <th><div style="width:80px;">MIG_UNIT</div></th>
+                            <th><div style="width:80px;">HIG_UNIT</div></th>
+                            <th><div style="width:150px;">COMMERCIAL_UNIT</div></th>
+                            <th><div style="width:120px;">PROCEDURE_PPP</div></th>
+                            <th><div style="width:80px;">ELIGIBLE_EWS</div></th>
+                            <th><div style="width:80px;">CENTRAL_GRANT</div></th>
+                            <th><div style="width:80px;">STATE_GRANT</div></th>
+                            <th><div style="width:80px;">LAND_COST</div></th>
+                            <th><div style="width:80px;">CASH_GRANT</div></th>
+                            <th><div style="width:80px;">IA_SHARE</div></th>
+                            <th><div style="width:80px;">BEN_SHARE</div></th>
+                            <th><div style="width:150px;">TECH_SPECIFICATION</div></th>
+                            <th><div style="width:120px;">TRUNK_INFRA</div></th>
+                            <th><div style="width:80px;">WATER</div></th>
+                            <th><div style="width:80px;">SEWERAGE</div></th>
+                            <th><div style="width:80px;">ROAD</div></th>
+                            <th><div style="width:80px;">WATER_DRAIN</div></th>
+                            <th><div style="width:120px;">ELECTRIFICATION</div></th>
+                            <th><div style="width:120px;">WASTE_MANAGEMENT</div></th>
+                            <th><div style="width:80px;">OTHER_INFRA</div></th>
+                            <th><div style="width:80px;">SOCIAL_INFRA</div></th>
+                            <th><div style="width:150px;">DISASTER_RESISTANT</div></th>
+                            <th><div style="width:120px;">QUALITY_ASSURANCE</div></th>
+                            <th><div style="width:80px;">Q_N_M</div></th>
+                            <th><div style="width:150px;">ENCUMB_FREE_LAND</div></th>
+                            <th><div style="width:80px;">GREEN_TECH</div></th>
+                            <th><div style="width:80px;">SLAC_COMMENT</div></th>
+                            <th><div style="width:80px;">OTHER_INFO</div></th>
+                            <th><div style="width:150px;">SUBMISSION_TO_SLSMC</div></th>
+                            <th><div style="width:80px;">SLSMC_FEEDBACK</div></th>
+                            <th><div style="width:80px;">CSMC_FEEDBACK</div></th>
+                            <th><div style="width:80px;">STATUS</div></th>
+                            <th><div style="width:80px;">SLSMC_APPROVAL</div></th>
 
 
 

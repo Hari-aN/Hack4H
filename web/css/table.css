@@ -13,6 +13,15 @@ table {
     border-spacing: 0;
     width: 80%;
     border: 3px solid #ddd;
+    table-layout: fixed;
+}
+table2 {
+
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 80%;
+    border: 3px solid #ddd;
+table-layout: fixed;
 }
 th{color: green;}
 th, td {
@@ -20,6 +29,8 @@ th, td {
     padding: 8px;
     alignment-adjust: central;
     height: 20px;
+    margin-right: 20px;
+    width:100px;
 }
 tr{border-bottom: 1px solid #ddd;}
 tr.header{

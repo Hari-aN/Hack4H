@@ -72,14 +72,14 @@
                             <input name="userNameULB" id="icon_prefix" type="text" class="validate">
                             <label for="icon_prefix">User Name</label>
                         </div>
-
+  
                         <div style="width:300px;" class="input-field row s3">
                             <input name="userNameULB" id="icon_prefix" type="password" class="validate">
                             <label for="icon_prefix">Password</label>
                         </div>
 
                         <div style="margin-left: -100px" class="row">
-                            <a class="marbtn grey-text text-lighten-3 waves-effect waves-light btn">Submit</a>
+                            <a onclick="Validate();">class="marbtn grey-text text-lighten-3 waves-effect waves-light btn">Submit</a>
                         </div>
                     </div>
             </li>
