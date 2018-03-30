@@ -153,10 +153,18 @@
                                 <td>OTHER</td>
                                 <%
                                     }//printing religion for selection  END***********
-                                %>                          <td><%= RS.getString(7)%></td>
+%>                          <td><%= RS.getString(7)%></td>
 
 
-                                <td><a href="http://localhost:8080/Hack2k18_PMAY/JSP/7cUpdate.jsp" >add</a></td>
+                                <td>
+                                    <a href="../7cUpdate.jsp?surveyNo=<%= RS.getString(1)%>">click me</a>
+                                </td>
+                                <!--<td>
+                                
+                                    <input name="group1" type="radio" id="test1" onclick="editRecord(<%=RS.getString(2)%>);" />
+                                    <label for="test1"></label>
+ 
+                                <a href="http://localhost:8080/Hack2k18_PMAY/JSP/7cUpdate.jsp" >add</a></td>-->
                                 <%
 
                                         i++;
@@ -175,12 +183,19 @@
                         var idx = $(e.currentTarget).index() + 1;
                         $("#delegation-idx").text(idx);
                         console.log('delegated6', idx);
-                        <%
-                        
-                        
-                        %>
+                    <%
+
+                    %>
                     });
 
+                </script>
+                <script language="javascript">
+                    function editRecord(id) {
+                        var f = document.form;
+                        f.method = "post";
+                        f.action = 'edit.jsp?id=' + id;
+                        f.submit();
+                    }
                 </script>
             </form>
 

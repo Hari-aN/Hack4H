@@ -8,6 +8,14 @@
         <servlet-name>BLC_ULB_DPR_Update</servlet-name>
         <servlet-class>controllers.BLC_ULB_DPR_Update</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>sendmail1</servlet-name>
+        <servlet-class>sendmail1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SendMail</servlet-name>
+        <servlet-class>controllers.SendMail</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AHPRegistration</servlet-name>
         <url-pattern>/AHPRegistration</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>BLC_ULB_DPR_Update</servlet-name>
         <url-pattern>/BLC_ULB_DPR_Update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sendmail1</servlet-name>
+        <url-pattern>/sendmail1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SendMail</servlet-name>
+        <url-pattern>/SendMail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -48,20 +48,19 @@ public class MailBean
             transport.close();
         }
         catch (AddressException ae) {
-            System.out.print(ae);
+            ae.printStackTrace();
         }
         catch (MessagingException me) {
-            System.out.print(me);
+        me.printStackTrace();
         }
     }
     public static void main(String[] args) 
     {
         MailBean mail = new MailBean();
-        String to[] ={"bisenharishankar@gmail.com","rishabhojha11@gmail.com"};
-        MailBean.sendFromGMail("bisenharishankar@gmail.com", "haribhai2207",to, "Testing Email", "smtp  email testing//////");
+        String to[] ={"bisenharishankar@gmail.com"};
+        MailBean.sendFromGMail("h4hackathon2018@gmail.com", "herculean@2018",to, "KUCH NA HONE WALA AAP LOGO SE", "KUCH NA HONE WALA AAP LOGO SE");
         
     }
 
     
 }
-

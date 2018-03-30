@@ -223,17 +223,9 @@
                             <td><div style="width:450px;"><%= RS.getString(34)%></div></td>
                             <td><div style="width:120px;"><%= RS.getString(35)%></div></td>
                             <td><div style="width:150px;"><%= RS.getString(36)%></div></td>
+                               
                                 <%
-                                    if (RS.getString(14) == "verified") {
-                                %>
-                                <%= RS.getString(14)%>
-                                <%
-                                } else {
-                                %>
-                                <%
-                                        }
-                                        i++;
-                                    }
+                            }                                   
                                 %>
                         </tr>
                     </table>

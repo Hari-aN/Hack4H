@@ -102,7 +102,7 @@
             //Creating the object of AdminVewRequestBean
             sevenCUpdateBean obj = new sevenCUpdateBean();
             //Using the static show_Customer_NV() function of Customer
-            RS = obj.selectRecord7cUpdate(2);
+            RS = obj.selectRecord7cUpdate(Integer.parseInt(request.getParameter("surveyNo")));
             int i = 1;
             while (RS.next()) {
 
